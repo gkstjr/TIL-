@@ -7,7 +7,7 @@ public class if01 {
 		//둘 중 하나(ex : 홀수 / 짝수)
 		
 		//준비
-		int number = 7;
+		int number =  7;
 	
 		//계산
 		boolean isEven = number % 2 == 0;
