@@ -15,7 +15,7 @@ public class if01 {
 		//출력
 		if(isEven) {
 			System.out.println("짝수입니다");
-		}
+		} 
 		else {
 			System.out.println("홀수입니다");
 		}
