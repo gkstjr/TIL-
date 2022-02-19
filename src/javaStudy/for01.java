@@ -9,7 +9,7 @@ public class for01 {
 		 
 		System.out.print(a[0] + " ");
 		System.out.print(a[1]);
-		System.out.println(a[2]);
+		System.out.println(a[2]); 
 		System.out.println(a.length);
 	}
 }
