@@ -1,5 +1,5 @@
 package java;
-//til
+//tilK
 public class for01 {
 
 }
