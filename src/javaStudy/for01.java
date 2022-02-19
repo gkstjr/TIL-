@@ -6,7 +6,7 @@ public class for01 {
 		a[0] = "안녕";
 		a[1] = "나는 ";
 		a[2] = "김한석이라고해";
-		
+		 
 		System.out.print(a[0] + " ");
 		System.out.print(a[1]);
 		System.out.println(a[2]);
