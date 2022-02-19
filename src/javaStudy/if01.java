@@ -1,4 +1,4 @@
-package java;
+package javaStudy;
 import java.lang.*;
 public class if01 {
 
@@ -6,7 +6,7 @@ public class if01 {
 		//그룹 조건 : 둘 중 하나, 셋 중 하나, 넷 중 하나, ...
 		//둘 중 하나(ex : 홀수 / 짝수)
 		
-		//준비
+		//준비  
 		int number =  7;
 	
 		//계산
