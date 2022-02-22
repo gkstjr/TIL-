@@ -9,7 +9,7 @@ public class Array {
 			////= 3명의 학생이 있어야 하므로 3칸의 배열을 생성한다.
 			////student -------> [?][?][?]
 			int[] student = new int[3];
-			
+			  
 			student[0] = 60; ///student의 +0지점에 60을 저장하라!
 			///student -------->[60][][0]
 			student[1] = 75; ///student의 +1지점에 75을 저장하라!
