@@ -11,7 +11,7 @@
   - [표준 출력](#표준-출력)
   - [If문](#if문)
   - [for문](#for문)
-  - [배열](https://github.com/gkstjr/TIL-/blob/f4dfd8d308c6cff5227992ef8b8848f5db54eb41/src/javaStudy/array)
+  - [배열](https://github.com/gkstjr/TIL-/blob/2d080254dca8e244304dafde5e303810cdf9c562/src/javaStudy/array.md)
   
 -------------------------
 
