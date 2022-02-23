@@ -11,8 +11,8 @@
   - [표준 출력](#표준-출력)
   - [If문](#if문)
   - [for문](#for문)
-  - [배열필기 클래스파일로 해보기](https://github.com/gkstjr/TIL-/blob/1fba7fb78a3bb2dc9fd5babc760219cd761a4ca5/src/javaStudy/Array.java)
-
+  - [배열](https://github.com/gkstjr/TIL-/blob/f4dfd8d308c6cff5227992ef8b8848f5db54eb41/src/javaStudy/array)
+  
 -------------------------
 
 
