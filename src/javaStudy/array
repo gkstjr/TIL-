@@ -6,7 +6,7 @@ ex코드)3칸의 배열을 생성한 후 데이터 60,75,88을 넣어라
 ```js
 int[]  array = new int[3];
 array[0] = 60;
-array[1] = 75;
+array[1] = 75;  
 array[2] = 88;
 ```
 
