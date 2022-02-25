@@ -12,7 +12,7 @@
   - [If문](https://github.com/gkstjr/TIL-/blob/921ddac1966cf5e77f2aea0cb388106267eac7c1/src/if%EB%AC%B8.md)
   - [for문](https://github.com/gkstjr/TIL-/blob/1b654ca9e225e533c5d2203bb34709aef880d2ea/src/for%EB%AC%B8.md)
   - [배열](https://github.com/gkstjr/TIL-/blob/2d080254dca8e244304dafde5e303810cdf9c562/src/javaStudy/array.md)
-  - [객체 지향 프로그래밍](https://github.com/gkstjr/TIL-/blob/7c66505543a3f80cb98988080f527d9a00b53139/src/javaStudy/object.md)
+  - [객체 지향 프로그래밍](https://github.com/gkstjr/TIL-/blob/4dfac3e976235e0f140516b5856edc752e29befc/src/javaStudy/object.md)
 -------------------------
 
 
