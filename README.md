@@ -5,7 +5,7 @@
 - 기록을 습관화하자  
 
 # Java
-  - [ 원시형vs참조형](#원시형vs참조형)
+  - [ 원시형vs참조형](https://github.com/gkstjr/TIL-/blob/bcd1b5da4e8d7d8eba845be45bec2ae9e2228957/src/javaStudy/%EC%9B%90%EC%8B%9C%ED%98%95vs%EC%B0%B8%EC%A1%B0%ED%98%95.md)
   - [이스케이프 문자](#escape-sequence)
   - [표준 입력](#표준-입력)
   - [표준 출력](#표준-출력)
