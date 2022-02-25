@@ -4,7 +4,7 @@
  - **참조형은 복잡한 기능이 담겨 있는 덩어리(객체)와 리모컨(참조변수)이 존재하는 형태다.**
 
 예시코드) 
-```js
+```js 
     String a ="hello"; 
 		System.out.println(a);
 		System.out.println(a.length());//a라는 리모컨의 length라는 버튼을 눌러라라는 뜻(원시형에서는 절대불가)
