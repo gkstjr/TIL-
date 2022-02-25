@@ -12,7 +12,7 @@
   - [If문](#if문)
   - [for문](#for문)
   - [배열](https://github.com/gkstjr/TIL-/blob/2d080254dca8e244304dafde5e303810cdf9c562/src/javaStudy/array.md)
-  - [객체 지향 프로그래밍](https://github.com/gkstjr/TIL-/blob/b5afd8428bfcb05001b5740cef3aa1f9164f070d/src/javaStudy/object.md)
+  - [객체 지향 프로그래밍](https://github.com/gkstjr/TIL-/blob/7c66505543a3f80cb98988080f527d9a00b53139/src/javaStudy/object.md)
 -------------------------
 
 
