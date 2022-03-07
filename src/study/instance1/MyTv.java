@@ -25,7 +25,7 @@ public class MyTv {
 	void volumeDown() {
 		if(volume>MIN_VOLUME) {
 			this.volume--;
-			}
+			} 
 	}
 	void channelUp() {
 		if(channel==MAX_CHANNEL) {
