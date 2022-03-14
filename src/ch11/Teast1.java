@@ -21,7 +21,7 @@ public class Teast1 {
 		while(!st.empty()) {
 			System.out.println(st.pop());
 		}
-		System.out.println("= queue = ");
+		
 		while(!q.isEmpty()) {
 			System.out.println(q.poll());
 		}
