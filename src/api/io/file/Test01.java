@@ -9,7 +9,8 @@ public static void main(String[] args) {
 	File c = new File("files\\sample.kh");
 	
 	System.out.println(a.exists());
-	
+	System.out.println(b.exists());
+	System.out.println(c.exists());
 }
 
 	}
