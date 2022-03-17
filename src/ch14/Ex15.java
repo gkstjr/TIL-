@@ -8,7 +8,7 @@ import java.util.stream.Stream;
 public class Ex15 {
 	public static void main(String[] args) {
 //		List<Integer>	list = Arrays.asList(1,2,3,4,5);
-//		Stream<Integer > intStream = list.stream();
+//		Stream<Integer > intStream = list.stream();  
 //		intStream.forEach(System.out::print);
 //		
 //		//stream은 1회용, stream에 대해 최종연산을 수행하면 stream이 닫힌다.
