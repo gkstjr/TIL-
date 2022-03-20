@@ -12,7 +12,7 @@ public class Test01 {
 		System.out.println("서버준비 완료");
 		Socket socket = server.accept();
 		System.out.println("사용자 접속");
-		
+		System.out.println(socket);
 		socket.close();
 		System.out.println("접속 종료");
 		
