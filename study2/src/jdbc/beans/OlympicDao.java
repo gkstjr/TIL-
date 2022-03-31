@@ -3,6 +3,9 @@ package jdbc.beans;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 public class OlympicDao {
 
@@ -52,7 +55,52 @@ public class OlympicDao {
 			return count>0;
 		}
 		
-		
-
+		public List<OlympicDto> select() throws Exception{
+			Connection con =  JdbcUtils.getConnection();
+			String sql = "select * from olympic";
+			PreparedStatement ps = con.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			
+			List<OlympicDto> list = new ArrayList<>();
+			
+			while(rs.next()) {
+				OlympicDto olympicDto = new OlympicDto();
+				olympicDto.setRank(rs.getInt("rank"));
+				olympicDto.setName(rs.getString("name"));
+				olympicDto.setGold(rs.getInt("gold"));
+				olympicDto.setSilver(rs.getInt("silver"));
+				olympicDto.setBronze(rs.getInt("bronze"));
+				
+				list.add(olympicDto);
+			
+			}
+			
+				con.close();
+				return list;
+		}
+		public List<OlympicDto> selectList(String keyword) throws Exception{
+			Connection con = JdbcUtils.getConnection();
+			String sql = "select * from olympic where instr(name,?)>0 order by rank asc";
+//			String sql = "select * from olympic where name like '%'||?||'%' order by rank asc";
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setString(1, keyword);
+			ResultSet rs = ps.executeQuery();
+			
+			List<OlympicDto> list = new ArrayList<>();
+			
+			while(rs.next()) {
+				OlympicDto olympicDto = new OlympicDto();
+				olympicDto.setRank(rs.getInt("rank"));
+				olympicDto.setName(rs.getString("name"));
+				olympicDto.setGold(rs.getInt("gold"));
+				olympicDto.setSilver(rs.getInt("silver"));
+				olympicDto.setBronze(rs.getInt("bronze"));
+				
+				list.add(olympicDto);
+				
+			}
+			con.close();
+			return list;
+		}
 	
 }
