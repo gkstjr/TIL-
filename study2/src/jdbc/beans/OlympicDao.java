@@ -103,4 +103,26 @@ public class OlympicDao {
 			return list;
 		}
 	
+		public OlympicDto selectOne(int rank) throws Exception {
+			Connection con = JdbcUtils.getConnection();
+			String sql = "select*from olympic where rank = ?";
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setInt(1, rank);
+			ResultSet rs = ps.executeQuery();
+			OlympicDto olympicDto; 
+			if(rs.next()) {
+				olympicDto = new OlympicDto();
+				olympicDto.setRank(rs.getInt("rank"));
+				olympicDto.setName(rs.getString("name"));
+				olympicDto.setGold(rs.getInt("gold"));
+				olympicDto.setSilver(rs.getInt("silver"));
+				olympicDto.setBronze(rs.getInt("bronze"));
+				
+				
+			}else {
+				olympicDto = null;
+			}
+			con.close();
+			return olympicDto;
+		}
 }
