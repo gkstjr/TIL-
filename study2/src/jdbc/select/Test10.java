@@ -2,7 +2,7 @@ package jdbc.select;
 
 import jdbc.beans.OlympicDao;
 import jdbc.beans.OlympicDto;
-
+  
 public class Test10 {
 	public static void main(String[] args) throws Exception {
 		int rank = 99;
