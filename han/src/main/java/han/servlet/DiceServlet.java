@@ -1,4 +1,4 @@
-package han.sevlet;
+package han.servlet;
 
 import java.io.IOException;
 import java.util.Random;
