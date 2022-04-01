@@ -9,22 +9,25 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import han.beans.OlympicDao;
-import han.beans.OlympicDto;
-@WebServlet(urlPatterns="/olympic/list.kh")
-public class OlympicListServlet extends HttpServlet {
+import han.beans.ScoreDao;
+import han.beans.ScoreDto;
+
+@WebServlet(urlPatterns = "/score/list.kh")
+public class ScoreListServlet extends HttpServlet{
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		try {
-			OlympicDao olympicDao = new OlympicDao();
-			List<OlympicDto> list = olympicDao.select();
+				ScoreDao scoreDao = new ScoreDao();
+				List<ScoreDto> list = scoreDao.select();
+				
+				
+				resp.setContentType("text/plain; charset = UTF-8");
+				
+				for(ScoreDto scoreDto:list) {
+					resp.getWriter().println(scoreDto);
+				}
 			
 			
-			
-			resp.setContentType("text/plain; charset = utf-8");
-			for(OlympicDto olympicDto : list) {
-				resp.getWriter().println(olympicDto);
-			}
 			
 		}catch(Exception e) {
 			e.printStackTrace();
