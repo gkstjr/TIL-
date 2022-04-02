@@ -14,7 +14,7 @@ public class ExamDao {
 		Class.forName("oracle.jdbc.OracleDriver");
 		Connection con = DriverManager.getConnection("jdbc:oracle:thin:@www.sysout.co.kr:11521:xe","kh4","kh4");
 		
-		String sql = "insert into exam value(exam_seq.nextval,?,?,?,?)";
+		String sql = "insert into exam values(exam_seq.nextval,?,?,?,?)";
 		PreparedStatement ps = con.prepareStatement(sql);
 		
 		ps.setString(1, examDto.getStudent());
