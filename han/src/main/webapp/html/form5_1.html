@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action = "/han/board/insert.kh">
+		<fieldset>
+			<legend>게시글 작성</legend>		
+		
+		<select name = "head">
+			<option>정보</option>
+			<option>유머</option>
+			<option>공지</option>
+			<option>일반</option>
+			
+		</select>
+		<br><br>
+		<input type = "text" name = "title" placeholder = "제목 작성">
+		<br><br>
+		<textarea name = "content" placeholder = "내용 작성" rows="10" cols="60">급하게 생각하지말자</textarea>
+		<br><br>
+			
+		</fieldset>
+		<fieldset>
+			<legend>첨부 파일</legend>		
+		<input type = "file" name = "attach">
+		</fieldset>
+		<br><br>
+		<input type = "submit" value = "작성완료">
+		
+		</form>
+</body>
+</html>
