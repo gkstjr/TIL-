@@ -7,6 +7,7 @@ public class ProductDto {
 	private int price;
 	private String made;
 	private String expire;
+	
 	public int getNo() {
 		return no;
 	}
@@ -51,6 +52,18 @@ public class ProductDto {
 		return "ProductDto [no=" + no + ", name=" + name + ", type=" + type + ", price=" + price + ", made=" + made
 				+ ", expire=" + expire + "]";
 	}
-
-	
+	public String getMadeStringNotNull() {
+		if(this.made==null) {
+			return"";
+		}else {
+			return this.made.toString();
+		}
+	}
+	public String getExpireStringNotNull() {
+		if(this.expire==null) {
+			return"";
+		}else {
+			return this.expire.toString();
+		}
+	}
 }

@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import han.beans.OlympicDao;
 import han.beans.OlympicDto;
 
-@WebServlet(urlPatterns= "/olympic/detail.kh")
+@WebServlet(urlPatterns= "/olympic/detail1.kh")
 public class OlympicDetailServlet extends HttpServlet{
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

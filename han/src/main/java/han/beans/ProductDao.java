@@ -33,13 +33,12 @@ public class ProductDao {
 			return list;
 	}
 
-	public List<ProductDto> selectList(String name,String type) throws Exception{
+	public List<ProductDto> selectList(String type,String name) throws Exception{
 		Connection con = JdbcUtils.getConnection();
 		
-		String sql = "select* from product where name = ? and type = ?";
+		String sql = "select * from product where instr("+type+", ?) > 0 order by "+type+" asc";
 		PreparedStatement ps = con.prepareStatement(sql);
 		ps.setString(1, name);
-		ps.setString(2, type);
 		ResultSet rs = ps.executeQuery();
 		
 List<ProductDto> list = new ArrayList<>();

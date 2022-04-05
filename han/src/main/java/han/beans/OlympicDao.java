@@ -141,6 +141,29 @@ List<OlympicDto> list = new ArrayList<>();
 		return olympicDto;
 	}
 
-
+	public OlympicDto selectOne(String name) throws Exception{
+		Connection con = JdbcUtils.getConnection();
+		String sql = "select * from olympic where name = ?";
+		PreparedStatement ps = con.prepareStatement(sql);
+		ps.setString(1, name);
+		ResultSet rs = ps.executeQuery();
+		OlympicDto olympicDto;
+		if(rs.next()) {
+			 olympicDto = new OlympicDto();
+			olympicDto.setRank(rs.getInt("rank"));
+			olympicDto.setName(rs.getString("name"));
+			olympicDto.setGold(rs.getInt("gold"));
+			olympicDto.setSilver(rs.getInt("silver"));
+			olympicDto.setBronze(rs.getInt("bronze"));
+			
+	}else {
+		olympicDto = null;
+	}
+		
+		
+		
+		con.close();
+		return olympicDto;
+	}
 
 }

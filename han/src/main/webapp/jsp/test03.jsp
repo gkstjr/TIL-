@@ -6,7 +6,7 @@
    			<%if(i%2==0){%>
    			<tr bgcolor = "skyblue">
    			<% }else{%>
-   				<tr>
+   			<tr>
    			
    			<%} %>
    				<td><%=i %>-1</td>
