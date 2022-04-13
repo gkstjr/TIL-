@@ -31,7 +31,7 @@ public class MemberLoginServlet extends HttpServlet {
 				memberDao.updateLogindate(memberId);
 				//세션에 login이라는 이름으로 사용자의 아이디를 저장해야한다 -->로그인 처리
 				req.getSession().setAttribute("login", memberId);
-				
+				req.getSession().setAttribute("auth", memberDto.getMemberGrade());
 				resp.sendRedirect(req.getContextPath());
 			}else {
 				resp.sendRedirect("login.jsp?error");

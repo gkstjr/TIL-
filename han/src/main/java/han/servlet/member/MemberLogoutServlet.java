@@ -14,7 +14,7 @@ public class MemberLogoutServlet extends HttpServlet{
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 			try {
 				req.getSession().removeAttribute("login");
-				
+				req.getSession().removeAttribute("auth");
 				resp.sendRedirect(req.getContextPath());
 				
 			}catch(Exception e) {

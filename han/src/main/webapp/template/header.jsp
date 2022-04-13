@@ -4,8 +4,12 @@
 <%
 
 	String memberId = (String) session.getAttribute("login");
-
+	
 	boolean login = memberId != null ;
+	
+	String auth = (String)session.getAttribute("auth");
+	boolean admin = auth != null && auth.equals("관리자");
+
 %>
 
 
@@ -21,7 +25,7 @@
 		<!-- 정보 확인용 공간 -->
 			<tr>
 				<td>
-					memberId = <%=memberId %>, login = <%=login %>, Session ID = <%=session.getId() %>
+					memberId = <%=memberId %>, login = <%=login %>, Session ID = <%=session.getId() %>, auth =<%=auth %>, admin= <%=admin %>;
 
 				</td>
 			</tr>	
@@ -45,6 +49,14 @@
 			<a href = "<%=request.getContextPath()%>/member/login.jsp">로그인</a>&nbsp;&nbsp;&nbsp;&nbsp;
 			
 			<%} %>
+			<%if(admin){%>
+				<a href = "<%=request.getContextPath()%>/admin/list.jsp">회원관리</a>&nbsp;&nbsp;&nbsp;&nbsp;
+				<a href = "<%=request.getContextPath()%>/admin/staticstics.jsp">사이트관리</a>&nbsp;&nbsp;&nbsp;&nbsp;
+			
+			
+			<% }%>
+			<a href = "<%=request.getContextPath() %>/board/list.jsp">게시판</a>
+			
 			
 			</td>
 		</tr>

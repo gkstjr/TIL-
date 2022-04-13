@@ -30,7 +30,7 @@ public class MemberExitServlet extends HttpServlet{
 					}
 					memberDao.delete(memberId);
 					req.getSession().removeAttribute("login");
-					
+					req.getSession().removeAttribute("auth");
 					resp.sendRedirect("exit_finish.jsp");
 			}catch(Exception e) {
 				e.printStackTrace();
