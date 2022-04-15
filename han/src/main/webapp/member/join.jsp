@@ -36,7 +36,7 @@
 						<tr>
 							<th>이메일</th>
 							<td>
-								<input type = "email" name = "memberEmail">
+								<input type = "email" name = "memberEmail" >
 							</td>
 						</tr>
 						<tr>
