@@ -29,6 +29,8 @@
 		type = <%=type %> , keyword = <%=keyword %>, search = <%=search %>
 	</h3>
 	<h1>자유 게시판</h1>
+		
+	<h3><a href = "write.jsp">글쓰기</a></h3>
 		<table border ="1" width = "800">
 			<thead>
 					<tr>
@@ -46,6 +48,9 @@
 						<td align = "left">
 						<a href = "detail.jsp?boardNo=<%=boardDto.getBoardNo()%>">
 						<%=boardDto.getBoardTitle() %></a>
+						<%if(boardDto.getBoardReplycount()>0){ %>
+						[<%=boardDto.getBoardReplycount() %>]
+						<% } %>
 						</td>	
 						<td><%=boardDto.getBoardWriter()%></td>	
 						<td><%=boardDto.getBoardTime() %></td>
