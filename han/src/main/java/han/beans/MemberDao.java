@@ -9,7 +9,10 @@ public class MemberDao {
 	public void join(MemberDto memberDto) throws Exception{
 			Connection con = JdbcUtils.getConnection();
 			
-			String sql = "insert into member values(?,?,?,?,?,?,?,?,?)";
+			String sql = "insert into member("
+					+ "member_id, member_pw, member_nick, member_birth, member_email, "
+					+ "member_phone, member_post, member_basic_address, member_detail_address) "
+				+ "values(?, ?, ?, ?, ?, ?, ?, ?, ?)";
 			PreparedStatement ps = con.prepareStatement(sql);
 			ps.setString(1, memberDto.getMemberId());
 			ps.setString(2, memberDto.getMemberPw());
