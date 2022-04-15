@@ -11,7 +11,7 @@ import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebFilter(urlPatterns = {
+@WebFilter(filterName = "f1" ,urlPatterns = {
 		"/*"
 })
 public class UTF8EncodingFilter implements Filter {
