@@ -10,6 +10,15 @@ public class BoardDto {
 	private Date boardTime;
 	private int boardReadcount;
 	private String boardWriter;
+	private int boardReplycount;
+	
+	public int getBoardReplycount() {
+		return boardReplycount;
+	}
+	public void setBoardReplycount(int boardReplycount) {
+		this.boardReplycount = boardReplycount;
+	}
+	
 	public int getBoardNo() {
 		return boardNo;
 	}

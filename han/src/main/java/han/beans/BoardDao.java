@@ -11,7 +11,7 @@ public class BoardDao {
 	public List<BoardDto> selectList() throws Exception{
 		Connection con = JdbcUtils.getConnection();
 		
-		String sql = "select * from board order by board_no desc";
+		String sql = "select * from board order by board_no asc";
 		PreparedStatement ps = con.prepareStatement(sql);
 		ResultSet rs = ps.executeQuery();
 		
@@ -23,11 +23,12 @@ public class BoardDao {
 			boardDto.setBoardNo(rs.getInt("board_no"));
 			boardDto.setBoardHead(rs.getString("board_head"));
 			boardDto.setBoardTitle(rs.getString("board_title"));
-			boardDto.setBoardContent(rs.getString("board_content"));
+//			boardDto.setBoardContent(rs.getString("board_content"));
 			boardDto.setBoardTime(rs.getDate("board_time"));
 			boardDto.setBoardReadcount(rs.getInt("board_readcount"));
 			boardDto.setBoardWriter(rs.getString("board_writer"));
-	
+			//변경된 컬럼에 따라 추가 조회구문 작성
+			boardDto.setBoardReplycount(rs.getInt("board_replycount"));
 			list.add(boardDto);
 	}
 		
@@ -55,11 +56,13 @@ public class BoardDao {
 			boardDto.setBoardNo(rs.getInt("board_no"));
 			boardDto.setBoardHead(rs.getString("board_head"));
 			boardDto.setBoardTitle(rs.getString("board_title"));
-			boardDto.setBoardContent(rs.getString("board_content"));
+//			boardDto.setBoardContent(rs.getString("board_content"));
 			boardDto.setBoardTime(rs.getDate("board_time"));
 			boardDto.setBoardReadcount(rs.getInt("board_readcount"));
 			boardDto.setBoardWriter(rs.getString("board_writer"));
-	
+			//추가 컬럼 정보 같이 조회하도록 변경
+			boardDto.setBoardReplycount(rs.getInt("board_replycount"));
+
 			list.add(boardDto);
 	}
 		
@@ -87,7 +90,8 @@ public class BoardDao {
 			boardDto.setBoardTime(rs.getDate("board_time"));
 			boardDto.setBoardReadcount(rs.getInt("board_readcount"));
 			boardDto.setBoardWriter(rs.getString("board_writer"));
-	
+			boardDto.setBoardReplycount(rs.getInt("board_replycount"));
+
 		}else {
 			boardDto = null;
 		}
@@ -125,7 +129,11 @@ public class BoardDao {
 	public void insert(BoardDto boardDto) throws Exception {
 		
 		Connection con = JdbcUtils.getConnection();
-		String sql = "insert into values(?,?,?,?,?)";
+		String sql  = "insert into board("
+				+ "board_no, board_head, board_title, board_content, board_writer"
+			+ ") "
+//		+ "values(board_seq.nextval, ?, ?, ?, ?)";//번호를 미리 만들지 않은 경우
+		+ "values(?, ?, ?, ?, ?)";//번호를 미리 만든 경우
 		PreparedStatement ps = con.prepareStatement(sql);
 		ps.setInt(1, boardDto.getBoardNo());
 		ps.setString(2, boardDto.getBoardHead());
@@ -163,6 +171,22 @@ public class BoardDao {
 		int count = ps.executeUpdate();
 		con.close();
 	
+		return count>0;
+	}
+
+	public boolean updateReplycount(int boardNo) throws Exception{
+		Connection con = JdbcUtils.getConnection();
+		
+		String sql = "update board set board_replycount = ("
+							+ "select count(*) from reply where reply_target = ?"
+							+ ") where board_no = ?";
+		PreparedStatement ps = con.prepareStatement(sql);
+		ps.setInt(1, boardNo);
+		ps.setInt(2, boardNo);
+		int count = ps.executeUpdate();
+		
+		con.close();
+		
 		return count>0;
 	}
 }
