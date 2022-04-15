@@ -11,7 +11,7 @@ import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebFilter(urlPatterns = {
+@WebFilter(filterName = "f2",urlPatterns = {
 		"/score/*",
 		"/member/mypage.jsp",
 		"/member/password.jsp","/member/password.kh",
