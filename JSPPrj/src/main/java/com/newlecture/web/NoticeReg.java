@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 public class NoticeReg extends HttpServlet {
 		@Override
 		protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-			req.setCharacterEncoding("UTF-8");
+//			req.setCharacterEncoding("UTF-8");
 			resp.setContentType("text/plain; charset= UTF-8");
 			
 			PrintWriter out = resp.getWriter();
