@@ -154,6 +154,7 @@
     padding: 0.5em;
     display: inline-block;
     background-color: #EEEEEE;
+    text-align: center;
 }
 .link.link-btn:hover{
     border: 1px solid black;
@@ -334,4 +335,48 @@ input[name=password] {
         .btn.btn-danger:hover{
             border-color:#ae2223;
             background-color:#ae2223;
+        }
+        .table{
+            width:100%;
+            border-collapse: collapse;
+        }
+        .table > thead>tr>th,
+        .table > thead>tr>td,
+        .table > tbody>tr>th,
+        .table > tbody>tr>td,
+        .table > tfoot>tr>th,
+        .table > tfoot>tr>td
+        {
+            text-align: center;
+            padding:0.5em;
+        }
+        .table.table-border{
+            border: 1px solid black;
+        }
+        .table.table-border > thead>tr>th,
+        .table.table-border > thead>tr>td,
+        .table.table-border > tbody>tr>th,
+        .table.table-border > tbody>tr>td,
+        .table.table-border > tfoot>tr>th,
+        .table.table-border > tfoot>tr>td{
+            border: 1px solid black;
+        }
+        
+        .table.table-stripe{
+        
+        }
+        .table.table-stripe>thead>tr,
+        .table.table-stripe>tfoot>tr{
+            background-color: skyblue;
+        }
+        .table.table-stripe > tbody>tr:nth-child(2n){
+            background-color: skyblue;
+        }
+        .table.table-hover{}
+        .table.table-hover>thead>tr{
+            background-color: skyblue;
+        }
+        .table.table-hover>tbody>tr:hover
+        {
+            background-color: skyblue;
         }
