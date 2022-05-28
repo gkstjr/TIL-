@@ -11,7 +11,7 @@ public class BoardController implements Controller{
 	@Override
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("/WEB-INF/views/board.jsp");
+		mv.setViewName("board");
 		return mv;
 	}
 	

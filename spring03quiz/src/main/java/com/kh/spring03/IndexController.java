@@ -11,7 +11,7 @@ public class IndexController implements Controller {
 	@Override
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("/WEB-INF/views/index.jsp");
+		mv.setViewName("index");
 		return mv;
 	}
 

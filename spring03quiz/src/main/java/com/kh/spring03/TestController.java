@@ -11,7 +11,7 @@ public class TestController implements Controller {
 	@Override
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("/WEB-INF/views/test.jsp");
+		mv.setViewName("test");
 		
 		
 		return mv;
