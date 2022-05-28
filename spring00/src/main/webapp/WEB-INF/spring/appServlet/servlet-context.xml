@@ -16,5 +16,11 @@
 		<property name="suffix" value = ".jsp"></property>
 	</bean>
 	
+		<!-- 
+		자동 스캔 설정
+	 -->
+	 <mvc:annotation-driven></mvc:annotation-driven>
+	 <context:component-scan base-package="여기 꼭 바꾸세요"></context:component-scan>
+	
 	
 </beans>
