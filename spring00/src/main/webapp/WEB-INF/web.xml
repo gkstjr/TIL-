@@ -3,6 +3,31 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee https://java.sun.com/xml/ns/javaee/web-app_4_0.xsd">
 
+	<!-- 
+		Spring에서 제공하는 Encoding Filter를 등록하여 UTF-8 로 변환 처리를 수행
+	 -->
+	<filter>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		
+		<!-- 옵션1 : 인코딩 방식이 UTF-8 임을 명시 -->
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+		
+		<!-- 옵션2 : 요청 뿐 아니라 응답까지도 강제 처리하도록 설정 -->
+		<init-param>
+			<param-name>forceEncoding</param-name>
+			<param-name>true</param-name>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+
 	<!--  스프링 전역 설정파일을 등록 -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
