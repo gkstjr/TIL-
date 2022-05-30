@@ -1,14 +1,14 @@
 package com.kh.home.repository;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.sql.DataSource;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.stereotype.Repository;
 
 import com.kh.home.entity.MemberDto;
@@ -21,7 +21,7 @@ public class MemberDao {
 	
 //	이 클래스는 연결 도구인 DataSource를 필요로 한다
 	@Autowired
-	private DriverManagerDataSource dataSource;
+	private DataSource dataSource;
 	
 	public void join(MemberDto memberDto) throws Exception {
 		Connection con = dataSource.getConnection();
