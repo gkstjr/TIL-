@@ -8,6 +8,9 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 
+import org.springframework.stereotype.Component;
+
+@Component//등록되어서 독립적인 작업을 수행하는 도구들
 public class SpringFilter implements Filter {
 
 	@Override

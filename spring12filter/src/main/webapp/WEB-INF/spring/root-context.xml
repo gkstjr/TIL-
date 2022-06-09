@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 	
 	<!-- 
 		이 파일은 프로그램 전체에 영향을 미치는 스프링 설정을 작성하는 파일이다!
 	 -->
-	<!-- 필터 등은 디스패처서블리소가 무관하므로 반드시 이곳에 등록해야 한다 -->
-	<bean id = "springFilter" class ="com.kh.spring12.filter.SpringFilter"></bean>
+		<mvc:annotation-driven></mvc:annotation-driven>
+		<context:component-scan base-package="com.kh.spring12" use-default-filters="true">
+			<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+		</context:component-scan>
 </beans>
