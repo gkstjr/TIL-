@@ -24,4 +24,15 @@
 			 )
 		</insert>
 		
+		<select id = "list" resultType = "OlympicDto">
+			select * from olympic order by rank asc
+		</select>
+		
+		<select id = "one" parameterType="String" resultType = "OlympicDto">
+			select * from olympic where name = #{name}
+		</select>
+		
+		<select id="search" parameterType= "Map" resultType="OlympicDto">
+			select * from olympic where instr(${type},#{keyword}) > 0 order by ${type} asc
+		</select>
 	</mapper> 	
