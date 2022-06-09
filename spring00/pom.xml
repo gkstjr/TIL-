@@ -122,16 +122,21 @@
 				
 		<!-- Servlet -->
 		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>servlet-api</artifactId>
-			<version>2.5</version>
-			<scope>provided</scope>
+		    <groupId>javax.servlet</groupId>
+		    <artifactId>javax.servlet-api</artifactId>
+		    <version>4.0.1</version>
+		    <scope>provided</scope>
 		</dependency>
 		<dependency>
-			<groupId>javax.servlet.jsp</groupId>
-			<artifactId>jsp-api</artifactId>
-			<version>2.1</version>
-			<scope>provided</scope>
+		    <groupId>javax.servlet.jsp</groupId>
+		    <artifactId>javax.servlet.jsp-api</artifactId>
+		    <version>2.3.3</version>
+		    <scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
 		</dependency>
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -139,13 +144,24 @@
 			<version>1.2</version>
 		</dependency>
 	
-		<!-- Test -->
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.7</version>
-			<scope>test</scope>
-		</dependency>        
+		<!-- 
+			테스트 프레임워크
+			- JUmit : 테스트 원천기술
+			- Spring-test : 변환 라이브러리
+		 -->
+				<dependency>
+			    <groupId>junit</groupId>
+			    <artifactId>junit</artifactId>
+			    <version>4.13.2</version>
+			    <scope>test</scope>
+			</dependency>
+
+			<dependency>
+				    <groupId>org.springframework</groupId>
+				    <artifactId>spring-test</artifactId>
+				    <version>${org.springframework-version}</version>
+				    <scope>test</scope>
+			</dependency>     
 	
 		<!-- 데이터베이스 의존성 -->
 		<dependency>
@@ -169,6 +185,18 @@
    				<version>2.9.0</version>
 		</dependency>
 		
+			<!-- mybatis 의존성 -->
+		<dependency>
+    <groupId>org.mybatis</groupId>
+    <artifactId>mybatis</artifactId>
+    <version>3.5.9</version>
+</dependency>
+		
+		<dependency>
+    <groupId>org.mybatis</groupId>
+    <artifactId>mybatis-spring</artifactId>
+    <version>2.0.7</version>
+</dependency>
 		
 	</dependencies>
     <build>
