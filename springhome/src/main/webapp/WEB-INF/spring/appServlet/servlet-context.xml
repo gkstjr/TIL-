@@ -60,4 +60,21 @@
 		<property name="maxWaitMillis" value = "3000"></property>
 	 </bean>
 	
+	<!-- 
+		mybatis를 사용하기 위한 도구
+			- SqlSessionFactoryBean : 스프링에서 SqlSessionFactory를 생성하기 위한 도구
+			- SqlSessionTemplate : 스프링에서 SqlSession을 생성하기 위한 도구
+		 -->
+		<bean id = "factory" class = "org.mybatis.spring.SqlSessionFactoryBean">
+			<property name="dataSource" ref= "dbcpSource"></property>
+			<property name="configLocation" value = "classpath:/mybatis/mybatis-config.xml"></property>
+			<property name="mapperLocations" value = "classpath:/mybatis/mapper/**/*-mapper.xml"></property>
+		</bean>
+		
+		<!-- 
+		tip : <property>는 setter 메소드를 이용한 설정을 지시, <constructor-args>는 생성자를 이용한 설정을 지시 
+		 -->
+		<bean id = "template" class = "org.mybatis.spring.SqlSessionTemplate">
+			<constructor-arg ref = "factory"></constructor-arg>
+		</bean>
 </beans>
