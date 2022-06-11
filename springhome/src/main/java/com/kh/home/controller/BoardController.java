@@ -154,4 +154,28 @@ public class BoardController {
 			 return "redirect:/board/detail";
 	}
 	
+	@GetMapping("/write")
+	public String write(
+			@RequestParam(required = false,defaultValue = "0") int superNo,
+			Model model) {
+		if(superNo > 0) {
+			model.addAttribute("superNo",superNo);
+		}
+		return "board/write";
+	}
+	
+	@PostMapping("/write")
+	public String write(@ModelAttribute BoardDto boardDto,
+			HttpSession session,
+			RedirectAttributes attr) {
+		
+		
+		String memberId = (String) session.getAttribute("login");
+		boardDto.setBoardWriter(memberId);
+		
+		int boardNo = boardDao.write(boardDto);
+//		return "redirect:detail?boardNo= " + boardNo;
+		attr.addAttribute("boardNo",boardNo);
+		return "redirect:detail";
+	}
 }	

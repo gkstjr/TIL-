@@ -66,4 +66,19 @@
 					board_no = #{boardNo}
 		
 		</update>
+		
+		<select id = "sequence" resultType="int">
+			select board_seq.nextval from dual
+		</select>
+		
+		<insert id = "write" parameterType="BoardDto">
+				insert into board(
+			board_no, board_head, board_title, board_content, board_writer, 
+			group_no, super_no, depth
+		)
+		values(
+			#{boardNo}, #{boardHead}, #{boardTitle}, #{boardContent}, #{boardWriter},
+			#{groupNo}, #{superNo}, #{depth}		
+		)
+		</insert>
 	</mapper> 	
