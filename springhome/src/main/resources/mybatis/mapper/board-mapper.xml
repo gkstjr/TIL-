@@ -52,4 +52,18 @@
 			select * from board where board_no = #{boardNo}
 		</select>
 		
+		<delete id = "delete" parameterType="int">
+			delete board where board_no = #{boardNo}
+		</delete>
+		
+		<update id = "edit" parameterType="BoardDto">
+			update board
+				set
+					board_head = #{boardHead},
+					board_title = #{boardTitle},
+					board_content = #{boardContent}
+				where
+					board_no = #{boardNo}
+		
+		</update>
 	</mapper> 	
