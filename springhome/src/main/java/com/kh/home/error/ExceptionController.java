@@ -12,7 +12,7 @@ public class ExceptionController {
 	@ExceptionHandler(Exception.class)
 	public String handler(Exception ex) {
 		log.error("예외 발생", ex);
-		return "에러페이지";
+		return "error/500";
 		
 	}
 	
