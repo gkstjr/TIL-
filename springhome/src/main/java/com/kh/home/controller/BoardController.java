@@ -83,9 +83,25 @@ public class BoardController {
 		return "board/detail";	
 	}
 	@GetMapping("/detail/{boardNo}")
-	public String detai2(@PathVariable int boardNo,Model model) {
+	public String detai2(@PathVariable int boardNo,Model model,HttpSession session) {
 		BoardDto boardDto = boardDao.read(boardNo);
 		model.addAttribute("boardDto",boardDto);
-		return "board/detail";
-	}
+		if(boardDto.getBoardWriter() != null) {
+			MemberDto memberDto = memberDao.info(boardDto.getBoardWriter());
+			model.addAttribute("memberDto",memberDto);
+		}
+//		내글인지 판정
+		String memberId = (String) session.getAttribute("login");
+		boolean isLogin = memberId != null;
+		boolean isOwner = isLogin && memberId.equals(boardDto.getBoardWriter());
+		model.addAttribute("isLogin",isLogin);
+		model.addAttribute("isOwner",isOwner);
+		
+		//		관리자인지 판정
+		String memberGrade = (String)session.getAttribute("auth");
+		boolean isAdmin = memberGrade != null && memberGrade.equals("관리자");
+		model.addAttribute("isAdmin",isAdmin);
+		
+		
+		return "board/detail";		}
 }	
