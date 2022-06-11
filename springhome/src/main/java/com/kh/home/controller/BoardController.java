@@ -2,15 +2,19 @@ package com.kh.home.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.kh.home.entity.BoardDto;
 import com.kh.home.entity.MemberDto;
@@ -103,5 +107,51 @@ public class BoardController {
 		model.addAttribute("isAdmin",isAdmin);
 		
 		
-		return "board/detail";		}
+		return "board/detail";	
+		}
+	
+	@GetMapping("/delete")
+	public String delete(@RequestParam int boardNo) {
+	boardDao.delete(boardNo);
+	return "redirect:list";
+	}
+	
+	
+	@GetMapping("/delete/{boardNo}")
+	public String delete2(@PathVariable int boardNo) {
+		boardDao.delete(boardNo);	
+		return "redirect:/board/list";
+	}
+	@GetMapping("/edit")
+	public String edit(@RequestParam int boardNo, Model model) {
+		BoardDto boardDto = boardDao.info(boardNo);
+		model.addAttribute("boardDto",boardDto);
+		return "board/edit";
+	}
+	@GetMapping("/edit/{boardNo}")
+	public String edit2(@PathVariable int boardNo,Model model) {
+		BoardDto boardDto = boardDao.info(boardNo);
+		model.addAttribute("boardDto",boardDto);
+		return "board/edit2";
+	}
+	@PostMapping("/edit")
+	public String edit(@ModelAttribute BoardDto boardDto,
+			HttpServletResponse response,
+			RedirectAttributes attr) {
+		 boardDao.edit(boardDto);
+//		return "redirect:detail?boardNo = " + boardDto.getBoardNo();
+		 attr.addAttribute("boardNo",boardDto.getBoardNo());
+		 return "redirect:detail";
+	}
+	@PostMapping("/edit/{boardNo}")
+	public String edit2(@ModelAttribute BoardDto boardDto,
+			@PathVariable int boardNo,
+			RedirectAttributes attr) {
+		 boardDto.setBoardNo(boardNo);
+		 boardDao.edit(boardDto);
+//			return "redirect:detail?boardNo = " + boardDto.getBoardNo();
+			 attr.addAttribute("boardNo",boardDto.getBoardNo());
+			 return "redirect:detail";
+	}
+	
 }	

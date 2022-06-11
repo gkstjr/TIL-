@@ -14,4 +14,13 @@ public interface BoardDao {
 
 	BoardDto read(int boardNo);
 
+
+	boolean delete(int boardNo);
+
+
+	BoardDto info(int boardNo);
+
+
+	boolean edit(BoardDto boardDto);
+
 }

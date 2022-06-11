@@ -43,4 +43,21 @@ public int count(String type, String keyword) {
 		sqlSession.update("board.plusReadcount",boardNo);
 		return sqlSession.selectOne("board.one",boardNo);
 	}
+@Override
+public boolean delete(int boardNo) {
+	int count = sqlSession.delete("board.delete",boardNo);
+	
+	return count>0;
+}
+
+		@Override
+		public BoardDto info(int boardNo) {
+		return sqlSession.selectOne("board.one",boardNo);
+		}
+
+@Override
+public boolean edit(BoardDto boardDto) {
+	return sqlSession.update("board.edit",boardDto) > 0;
+	
+}
 }
