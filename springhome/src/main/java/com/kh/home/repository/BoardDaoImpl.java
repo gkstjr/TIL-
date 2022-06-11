@@ -60,4 +60,21 @@ public boolean edit(BoardDto boardDto) {
 	return sqlSession.update("board.edit",boardDto) > 0;
 	
 }
+@Override
+public int write(BoardDto boardDto) {
+	int boardNo = sqlSession.selectOne("board.sequence");
+	boardDto.setBoardNo(boardNo);
+	//추가 계산
+	if(boardDto.getSuperNo() == 0) {
+		boardDto.setGroupNo(boardNo);
+	}else {//답글
+		BoardDto originDto = sqlSession.selectOne("board.one",boardDto.getSuperNo());
+		boardDto.setGroupNo(originDto.getGroupNo());
+		
+		boardDto.setDepth(originDto.getDepth()+1);
+		
+	}
+	sqlSession.insert("board.write",boardDto);
+	return boardNo;
+}
 }

@@ -23,4 +23,7 @@ public interface BoardDao {
 
 	boolean edit(BoardDto boardDto);
 
+
+	int write(BoardDto boardDto);
+
 }
