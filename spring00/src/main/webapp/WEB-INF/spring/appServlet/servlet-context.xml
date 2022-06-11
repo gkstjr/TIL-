@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+	servlet-context.xml은 DispatcherServlet의 작업을 위한 설정이다!
+ -->
 <beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns="http://www.springframework.org/schema/beans"
 	xmlns:context="http://www.springframework.org/schema/context"
@@ -8,81 +12,43 @@
 		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
 	<!-- 
-		View 페이지 탐지 도구 등록(View Resolver)
-	 	- 접두사(prefix)와 접미사(suffix)를 설정하여 효율적인 경로 설정이 가능하도록 처리
-	 -->
-	<bean class = "org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix" value = "/WEB-INF/views/"></property>
-		<property name="suffix" value = ".jsp"></property>
+		View 페이지 탐지 도구 등록 (View Resolver)
+		- 접두사(prefix)와 접미사(suffix)를 설정하여 효율적인 경로 설정이 가능하도록 처리 
+		- org.springframework.web.servlet.view.InternalResourceView
+	-->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/views/"></property>
+		<property name="suffix" value=".jsp"></property>
 	</bean>
 	
-		<!-- 
+	<!-- 
 		자동 스캔 설정
+		- 내가 정한 패키지를 기준으로 하여 등록 가능한 요소들을 탐지하여 등록하도록 설정
+		- 탐지하는 패키지는 top-level package로 설정하는 것이 일반적이다
+		- 스프링에서는 경로 관련된 처리는 spring-context 모듈이 수행
+		
+		- mvc:annotation-driven 설정을 하면 특정 annotation들이 활성화됨
+		
+		이 설정파일(servlet-context.xml)에서는 Controller만 스캔하도록 설정
 	 -->
-	 <mvc:annotation-driven></mvc:annotation-driven>
-	 <context:component-scan base-package="여기 꼭 바꾸세요"></context:component-scan>
+	<mvc:annotation-driven></mvc:annotation-driven>
+	
+	<!-- 복사한 뒤 반드시 고쳐야 하는 부분 -->
+	<context:component-scan base-package="여기꼭 바꾸세요" use-default-filters="false">
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+	</context:component-scan>
+	<!-- 복사한 뒤 반드시 고쳐야 하는 부분 -->
 	
 	<!-- 
 		정적 자원(static resource) 위치 지정
 		- DispatcherServlet을 거치면 안되는 요소들에 대한 설정을 수행
-		
+		- css, js, 이미지, font, ...
+		- 프로그래밍 처리가 필요하지 않은 요소들
+		- mvc 모듈 설정으로 처리
+		- 일반적으로 webapp 안의 resources 에 모든 요소를 저장
 	 -->
 	<mvc:resources location="/resources/css/" mapping="/css/**"></mvc:resources>
 	<mvc:resources location="/resources/js/" mapping="/js/**"></mvc:resources>
 	<mvc:resources location="/resources/font/" mapping="/font/**"></mvc:resources>
 	<mvc:resources location="/resources/image/" mapping="/image/**"></mvc:resources>
-	
-	<!-- 
-		데이터베이스 연결 객체를 등록
-		[1] 일반 연결(DriverManagerDataSource) - Spring JDBC 모듈
-		[2] DBCP 연결(BasicDataSource) - Apache Commons DBCP 모듈
-		
-		id : 내부적으로 사용하는 식별자
-	 	class : 등록할 클래스 전체경로
-	 -->
-	 <!-- 
-	 <bean id = "dataSource" class = "org.springframework.jdbc.datasource.DriverManagerDataSource">
-	 	<property name = "driverClassName" value = "oracle.jdbc.OracleDriver"></property>
-		<property name="url" value = "jdbc:oracle:thin:@www.sysout.co.kr:11521:xe"></property>
-		<property name="username" value = "kh4"></property>
-		<property name="password" value = "kh4"></property>
-	 </bean>
-	  -->
-	 
-	 <bean id = "dbcpSource" class ="org.apache.commons.dbcp2.BasicDataSource">
-	 	<property name = "driverClassName" value = "oracle.jdbc.OracleDriver"></property>
-		<property name="url" value = "jdbc:oracle:thin:@www.sysout.co.kr:11521:xe"></property>
-		<property name="username" value = "kh4"></property>
-		<property name="password" value = "kh4"></property>
-		
-		<property name="maxTotal" value = "20"></property>
-		<property name = "maxIdle" value ="5"></property>
-		<property name="maxWaitMillis" value = "3000"></property>
-	 </bean>
-	
-	
-	<!--
-		스프링에서 제공하는 JDBC 도구
-	  -->
-	<bean id = "jdbcTemplate" class = "org.springframework.jdbc.core.JdbcTemplate">
-		<property name = "dataSource" ref = "dbcpSource"></property>
-	</bean>
-	
-	<!-- 
-		mybatis를 사용하기 위한 도구
-			- SqlSessionFactoryBean : 스프링에서 SqlSessionFactory를 생성하기 위한 도구
-			- SqlSessionTemplate : 스프링에서 SqlSession을 생성하기 위한 도구
-		 -->
-		<bean id = "factory" class = "org.mybatis.spring.SqlSessionFactoryBean">
-			<property name="dataSource" ref= "dbcpSource"></property>
-			<property name="configLocation" value = "classpath:/mybatis/mybatis-config.xml"></property>
-			<property name="mapperLocations" value = "classpath:/mybatis/mapper/**/*-mapper.xml"></property>
-		</bean>
-		
-		<!-- 
-		tip : <property>는 setter 메소드를 이용한 설정을 지시, <constructor-args>는 생성자를 이용한 설정을 지시 
-		 -->
-		<bean id = "template" class = "org.mybatis.spring.SqlSessionTemplate">
-			<constructor-arg ref = "factory"></constructor-arg>
-		</bean>
-</beans>
+	</beans>
