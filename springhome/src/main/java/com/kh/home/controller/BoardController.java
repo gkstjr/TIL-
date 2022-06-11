@@ -151,7 +151,7 @@ public class BoardController {
 		 boardDao.edit(boardDto);
 //			return "redirect:detail?boardNo = " + boardDto.getBoardNo();
 			 attr.addAttribute("boardNo",boardDto.getBoardNo());
-			 return "redirect:detail";
+			 return "redirect:/board/detail";
 	}
 	
 }	
