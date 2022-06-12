@@ -3,8 +3,10 @@ package com.kh.home.repository;
 import java.io.File;
 import java.io.IOException;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ByteArrayResource;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -51,6 +53,19 @@ public class AttachmentDaoImpl implements AttachmentDao {
 												.build());
 //	   4
 		return attachmentNo;
+	}
+
+	@Override
+	public AttachmentDto info(int attachmentNo) {
+		return sqlSession.selectOne("attachment.one",attachmentNo);
+	}
+
+	@Override
+	public ByteArrayResource load(String attachmentSavename) throws IOException {
+		File target = new File(directory,attachmentSavename);
+		byte[] data = FileUtils.readFileToByteArray(target);
+		ByteArrayResource resource = new ByteArrayResource(data);
+		return resource;
 	}
 	
 }
