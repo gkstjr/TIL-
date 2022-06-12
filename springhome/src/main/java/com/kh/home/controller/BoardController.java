@@ -18,6 +18,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.kh.home.entity.BoardDto;
 import com.kh.home.entity.MemberDto;
+import com.kh.home.error.CannotFindException;
 import com.kh.home.repository.BoardDao;
 import com.kh.home.repository.MemberDao;
 
@@ -112,8 +113,13 @@ public class BoardController {
 	
 	@GetMapping("/delete")
 	public String delete(@RequestParam int boardNo) {
-	boardDao.delete(boardNo);
-	return "redirect:list";
+	boolean success = boardDao.delete(boardNo);
+	if(success) {
+		return "redirect:list";
+	}
+	else {
+		throw new CannotFindException();
+	}
 	}
 	
 	
@@ -138,10 +144,17 @@ public class BoardController {
 	public String edit(@ModelAttribute BoardDto boardDto,
 			HttpServletResponse response,
 			RedirectAttributes attr) {
-		 boardDao.edit(boardDto);
-//		return "redirect:detail?boardNo = " + boardDto.getBoardNo();
-		 attr.addAttribute("boardNo",boardDto.getBoardNo());
-		 return "redirect:detail";
+		 boolean success = boardDao.edit(boardDto);
+		 if(success) {
+			 //		return "redirect:detail?boardNo = " + boardDto.getBoardNo();
+			 attr.addAttribute("boardNo",boardDto.getBoardNo());
+			 return "redirect:detail";
+		 }
+		 else {
+			 throw new CannotFindException();
+		 }
+		 
+		
 	}
 	@PostMapping("/edit/{boardNo}")
 	public String edit2(@ModelAttribute BoardDto boardDto,
