@@ -35,14 +35,14 @@ public class AttachmentDaoImpl implements AttachmentDao {
 	@Override
 	public int save(MultipartFile attachment) throws IllegalStateException, IOException {
 //		1.
-		int attachmentNo = sqlSession.selectOne("시퀀스생성구문ID");
+		int attachmentNo = sqlSession.selectOne("attachment.sequence");
 		//2
 		String fileName = String.valueOf(attachmentNo);
 		File target = new File(directory, fileName);
 		attachment.transferTo(target);//저장
 		
 		//3
-		sqlSession.insert("등록구문ID",AttachmentDto.builder()
+		sqlSession.insert("attachment.insert",AttachmentDto.builder()
 													.attachmentNo(attachmentNo)
 													.attachmentUploadname(attachment.getOriginalFilename())
 													.attachmentSavename(fileName)
