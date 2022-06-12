@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.kh.home.entity.MemberDto;
 import com.kh.home.repository.MemberDao;
@@ -29,8 +30,14 @@ public class MemberController {
 		return "member/join";
 	}
 	@PostMapping("/join")
-	public String join(@ModelAttribute MemberDto memberDto) throws Exception {
+	public String join(@ModelAttribute MemberDto memberDto,
+			@RequestParam MultipartFile memberProfile) throws Exception {
 		memberDao.join(memberDto);
+		//프로필 등록 코드 추가(실제 저장 + DB처리)
+		if(!memberProfile.isEmpty()) {
+			
+		}
+		
 		return "redirect:/member/join_success";
 	}
 	@RequestMapping("/join_success")
