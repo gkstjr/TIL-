@@ -4,19 +4,27 @@ import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Repository;
 
 import com.kh.home.entity.MemberDto;
 import com.kh.home.vo.MemberComplexSearchVO;
 
-//@Repository
-public class MemberDaoMybatis implements MemberDao {
+@Repository
+public class MemberDaoEncryption implements MemberDao {
 	
 	@Autowired
 	private SqlSession sqlSession;
 
+	@Autowired
+	private PasswordEncoder passwordEncoder;
+	
 	@Override
 	public void join(MemberDto memberDto) {
+		//비밀번호를 암호화하여 재설정한 뒤 등록
+		String rawPassword = memberDto.getMemberPw();
+		String encryptPassword = passwordEncoder.encode(rawPassword);
+		memberDto.setMemberPw(encryptPassword);
 		sqlSession.insert("member.join",memberDto);
 		
 		
@@ -34,7 +42,8 @@ public class MemberDaoMybatis implements MemberDao {
 		if(memberDto == null) {
 			return null;
 		}
-		boolean isPasswordMatch = memberDto.getMemberPw().equals(memberPw);
+//		boolean isPasswordMatch = memberDto.getMemberPw().equals(memberPw);
+		boolean isPasswordMatch = passwordEncoder.matches(memberPw, memberDto.getMemberPw());
 		if(isPasswordMatch) {
 			sqlSession.update("member.updateLastLogin",memberId);
 			return memberDto;
@@ -56,8 +65,11 @@ public class MemberDaoMybatis implements MemberDao {
 		if(memberDto == null) {
 			return false;
 		}
+		//비밀번호 암호화 코드를 추가
+		String encodePassword = passwordEncoder.encode(changePw);
+		
 		int count = sqlSession.update("member.changePassword",
-				MemberDto.builder().memberId(memberId).memberPw(changePw).build());
+				MemberDto.builder().memberId(memberId).memberPw(encodePassword).build());
 	
 		return count > 0;
 	}
