@@ -19,6 +19,7 @@ import com.kh.home.entity.MemberDto;
 import com.kh.home.repository.AttachmentDao;
 import com.kh.home.repository.MemberDao;
 import com.kh.home.repository.MemberProfileDao;
+import com.kh.home.service.MemberService;
 
 @Controller
 @RequestMapping("/member")
@@ -33,6 +34,8 @@ public class MemberController {
 	@Autowired
 	private MemberProfileDao memberProfileDao;
 	
+	@Autowired
+	private MemberService memberService;
 	
 	@GetMapping("/join")
 	public String join() {
@@ -41,12 +44,8 @@ public class MemberController {
 	@PostMapping("/join")
 	public String join(@ModelAttribute MemberDto memberDto,
 			@RequestParam MultipartFile memberProfile) throws Exception {
-		memberDao.join(memberDto);
-		//프로필 등록 코드 추가(실제 저장 + DB처리)
-		if(!memberProfile.isEmpty()) {
-			int attachmentNo = attachmentDao.save(memberProfile);
-			memberProfileDao.insert(memberDto.getMemberId(), attachmentNo);
-			}
+		
+		memberService.join(memberDto, memberProfile);
 		
 		return "redirect:/member/join_success";
 	}
@@ -107,6 +106,17 @@ public class MemberController {
 		String memberId = (String)session.getAttribute("login");
 		MemberDto memberDto = memberDao.info(memberId);
 		model.addAttribute("memberDto",memberDto);
+		
+		//프로필 이미지의 다운로드 주소를 추가
+		// - member_profile에서 아이디를 이용하여 단일조회를 수행
+		// - http://localhost:8080/home/attachment/download?attachmentNo = 1
+		int attachmentNo = memberProfileDao.info(memberId);
+		if(attachmentNo == 0) {
+			model.addAttribute("profileUrl","/image/user.png");
+			
+		}else {
+			model.addAttribute("profileUrl","/attachment/download?attachmentNo=" + attachmentNo);
+		}
 		return "member/mypage";
 	}
 	
