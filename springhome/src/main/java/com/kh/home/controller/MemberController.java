@@ -16,7 +16,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.kh.home.entity.MemberDto;
+import com.kh.home.repository.AttachmentDao;
 import com.kh.home.repository.MemberDao;
+import com.kh.home.repository.MemberProfileDao;
 
 @Controller
 @RequestMapping("/member")
@@ -24,6 +26,13 @@ public class MemberController {
 	
 	@Autowired
 	private MemberDao memberDao;
+	
+	@Autowired
+	private AttachmentDao attachmentDao;
+	
+	@Autowired
+	private MemberProfileDao memberProfileDao;
+	
 	
 	@GetMapping("/join")
 	public String join() {
@@ -35,8 +44,9 @@ public class MemberController {
 		memberDao.join(memberDto);
 		//프로필 등록 코드 추가(실제 저장 + DB처리)
 		if(!memberProfile.isEmpty()) {
-			
-		}
+			int attachmentNo = attachmentDao.save(memberProfile);
+			memberProfileDao.insert(memberDto.getMemberId(), attachmentNo);
+			}
 		
 		return "redirect:/member/join_success";
 	}
