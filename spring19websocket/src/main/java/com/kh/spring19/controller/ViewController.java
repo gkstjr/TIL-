@@ -32,4 +32,8 @@ public class ViewController {
 	public String chatbot() {
 		return "chatbot";
 	}
+	@GetMapping("/member_only")
+	public String memberOnly() {
+		return "member_only";
+	}
 }

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.kh.spring19.entity.ChatbotDto;
+import com.kh.spring19.vo.ChatbotVO;
 
 @Repository
 public class ChatbotDaoImpl implements ChatbotDao {
@@ -22,6 +23,16 @@ public class ChatbotDaoImpl implements ChatbotDao {
 	@Override
 	public List<ChatbotDto> getAnswer(int superNo) {
 		return sqlSession.selectList("chatbot.answer",superNo);
+	}
+
+	@Override
+	public List<ChatbotVO> getFirstMessages2() {
+		return sqlSession.selectList("chatbot.first2");
+	}
+
+	@Override
+	public List<ChatbotVO> getAnswer2(int superNo) {
+		return sqlSession.selectList("chatbot.answer2",superNo);
 	}
 	
 }

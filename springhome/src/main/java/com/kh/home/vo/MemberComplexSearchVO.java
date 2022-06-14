@@ -1,9 +1,6 @@
 package com.kh.home.vo;
 
-import java.sql.Date;
 import java.util.List;
-
-import com.kh.home.entity.MemberDto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

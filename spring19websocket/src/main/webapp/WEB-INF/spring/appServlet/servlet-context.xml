@@ -98,12 +98,15 @@
 	 <bean id="simpleWebsocketServer" class="com.kh.spring19.ws.SimpleWebsocketServer"></bean>
 	 <bean id = "multiuserWebsocketServer" class = "com.kh.spring19.ws.MultiuserWebsocketServer"></bean>
 	 <bean id = "chatbotWebsocketServer" class = "com.kh.spring19.ws.ChatbotWebsocketServer"></bean>
-	
+	 <bean id = "memberOnlyWebsocketServer" class = "com.kh.spring19.ws.MemberOnlyWebsocketServer"></bean>
 	<websocket:handlers>
 		<websocket:mapping handler="defaultWebsocketServer" path="/ws/default"/>
 		<websocket:mapping handler="timingWebsocketServer" path="/ws/timing"/>
 		<websocket:mapping handler="simpleWebsocketServer" path="/ws/simple"/>
 		<websocket:mapping handler="multiuserWebsocketServer" path="/ws/multiuser"/>
 		<websocket:mapping handler="chatbotWebsocketServer" path="/ws/chatbot"/>
+		<websocket:mapping handler="memberOnlyWebsocketServer" path="/ws/memberonly"/>
+		
+		<websocket:sockjs ></websocket:sockjs>
 	</websocket:handlers>
 </beans>
