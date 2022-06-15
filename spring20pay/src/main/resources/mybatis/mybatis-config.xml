@@ -17,8 +17,8 @@
 	
 	
 	<typeAliases>
-		<package name="com.kh.spring19.entity"/>
-		<package name="com.kh.spring19.vo"/>
+		<package name="com.kh.spring20.entity"/>
+		<package name="com.kh.spring20.vo"/>
 	</typeAliases>
 	
 	
