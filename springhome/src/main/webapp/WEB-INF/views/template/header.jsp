@@ -77,11 +77,8 @@
         			</ul>
         		</li>
         		<li>
-        			<a href="#">평가관리</a>
-        			<ul>
-        				<li><a href="${root}/exam/list">목록보기</a></li>
-        				<li><a href="${root}/exam/insert">등록하기</a></li>
-        			</ul>
+        			<a href="${root }/exam/">평가관리</a>
+        			
         		</li>
         		<li>
         			<a href="#">상품관리</a>
