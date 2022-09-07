@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+	mapper 파일은 특정 테이블에 대한 SQL 구문을 보관하는 파일이다
+	- myBatis를 이용하는 개발자는 이곳에 저장된 SQL 구문을 "아이디"를 이용해서 호출한다
+	- 파일마다 동일한 아이디로 인해 발생하는 충돌을 방지하기 위해 고유한 namespace를 사용한다
+	- 만약 namespace가 olympic이고 구문 ID가 list라면 외부에서는 olympic.list로 호출한다
+	- 일반적으로 namespace는 테이블명으로 한다! 
+	- mapper 내부에는 다음 종류 태그로 구문을 저장할 수 있다.
+		- insert
+		- delete
+		- update
+		- select
+ -->
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+	<mapper namespace="olympic">
+	
+		<insert id = "insert" parameterType="com.kh.spring08.entity.OlympicDto">
+			insert into olympic(rank,name,gold,silver,bronze)
+			 values(
+			 #{rank},#{name},#{gold},#{silver},#{bronze}
+			 )
+		</insert>
+		
+		<select id = "list" resultType = "OlympicDto">
+			select * from olympic order by rank asc
+		</select>
+		
+		<select id = "one" parameterType="String" resultType = "OlympicDto">
+			select * from olympic where name = #{name}
+		</select>
+		
+		<select id="search" parameterType= "Map" resultType="OlympicDto">
+			select * from olympic where instr(${type},#{keyword}) > 0 order by ${type} asc
+		</select>
+	</mapper> 	

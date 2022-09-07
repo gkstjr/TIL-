@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel = "stylesheet" type = "text/css" href = "./css//commons.css">
+</head>
+<body>
+  <form>
+    <div class ="container w800 m30">
+        <div class = "row center">
+            <h1>게시글 쓰기</h1>
+        </div>
+        <div class ="row">
+            <label>말머리</label>
+            <select name = "boardHead" class ="form-input fill input-round">
+                <option value="">없음</option>
+                <option>정보</option>
+                <option>유머</option>
+                <option>공지</option>
+            </select>
+        </div>
+        <div class ="row">
+            <label>제목</label>
+            <input type = "text" name ="boardTitle" autocomplete="off" class ="form-input fill input-round">
+        </div>
+        <div class ="row">
+            <label>내용</label>
+            <textarea name ="boardContent" required class ="form-input fill input-round" rows="12"></textarea>
+        </div>
+        <div class ="row">
+            <button type ="submit" class = "btn btn-primary fill">게시글 등록</button>
+        </div>
+        <div class ="row">
+            <a href = "list.jsp" class ="link link-btn fill">목록으로 돌아가기</a>
+        </div>
+    </div>
+    </form>
+</body>
+</html>

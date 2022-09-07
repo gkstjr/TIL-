@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        .form-logo {
+            width:250px;
+            display: block;
+            margin: 15px 0px;
+        }
+        .form-input {
+            width:350px;
+            display: block;
+            padding: 15px;
+            font-size: 17px;
+            margin: 10px 0px;
+
+            border-radius: 5px;
+            border: 1px solid lightgray;
+        }
+        .form-btn {
+            width:350px;
+            display: block;
+            padding: 15px;
+            font-size: 17px;
+            margin: 20px 0px;
+
+            border: none;
+            background-color: rgb(178, 223, 252);
+            color: white;
+
+            border-radius: 5px;
+        }
+        .form-link {
+            width:350px;
+            display: block;
+            font-size: 17px;
+            text-decoration: none;
+        }
+
+        /*
+            정렬 관련해서는 태그를 두 종류로 생각하면 된다.
+            - 영역이 존재하는 태그 
+                - 좌우 margin을 auto라고 설정해야 정렬된다
+            - 영역이 존재하지 않는 태그 
+                - text-align : center;
+        */
+        .form-logo {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .outer {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <form action="?" method="post">
+            <img src="image/coupang.png" class="form-logo">
+            <input type="text" name="??" class="form-input" placeholder="전화번호, 사용자 이름 또는 이메일" required>
+            <input type="password" name="??" class="form-input" placeholder="비밀번호" required>
+            <input type="submit" value="로그인" class="form-btn">
+            <a href="#" class="form-link">비밀번호를 잊으셨나요?</a>
+        </form>        
+    </div>
+</body>
+</html>

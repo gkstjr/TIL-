@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+	mapper 파일은 특정 테이블에 대한 SQL 구문을 보관하는 파일이다
+	- myBatis를 이용하는 개발자는 이곳에 저장된 SQL 구문을 "아이디"를 이용해서 호출한다
+	- 파일마다 동일한 아이디로 인해 발생하는 충돌을 방지하기 위해 고유한 namespace를 사용한다
+	- 만약 namespace가 olympic이고 구문 ID가 list라면 외부에서는 olympic.list로 호출한다
+	- 일반적으로 namespace는 테이블명으로 한다! 
+	- mapper 내부에는 다음 종류 태그로 구문을 저장할 수 있다.
+		- insert
+		- delete
+		- update
+		- select
+ -->
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+	<mapper namespace="paymentDetail">
+			
+			<select id = "sequence" resultType="int">
+				select payment_detail_seq.nextval from dual
+			</select>
+			<insert id = "insert" parameterType="PaymentDetailDto">
+				insert into payment_detail(
+					payment_detail_no,payment_no,payment_detail_name,
+					payment_detail_quantity,payment_detail_price,payment_detail_status
+				)
+				values(
+					#{paymentDetailNo},#{paymentNo},#{paymentDetailName},#{paymentDetailQuantity},#{paymentDetailPrice},'승인'
+				)
+			</insert>
+			
+			<select id = "list" resultType="PaymentDetailDto" parameterType="int">
+				select * from payment_detail where payment_no = #{paymentNo}	
+			</select>
+			
+			<!-- 결제 상세내역에 대한 취소 -->
+			<update id = "cancel" parameterType="int">
+				update payment_detail
+					set payment_detail_status = '취소'
+					where payment_detail_no = #{paymentDetailNo}
+			</update>
+			
+			<select id = "one" resultType="PaymentDetailDto" parameterType="int">
+				select * from payment_detail where payment_detail_no = ${paymentDetailNo}
+			</select>
+			
+			<select id = "calculateCancelAmount" resultType = "int" parameterType="int">
+						select 
+						sum(payment_detail_price * payment_detail_quantity) "total" 
+						from payment_detail 
+						where
+							 payment_no = ${paymentNo} and payment_detail_status = '승인'
+			</select>
+			
+			<update id="cancelAll" parameterType="int">
+				update payment_detail
+				set payment_detail_status = '취소'
+				where payment_no = #{paymentNo}
+				
+				
+			
+			</update>
+			
+	</mapper> 	

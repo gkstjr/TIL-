@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button design</title>
+
+    <link rel="stylesheet" type="text/css" href="./css/commons.css">
+    <link rel="stylesheet" type="text/css" href="./css/test.css">
+    <style>
+        /*
+            버튼(Button)
+            - 클릭할 수 있는 도구
+            - 버튼의 종류는 하나가 아니다
+            버튼의 구분 : 버튼의 역할을 통해 버튼 디자인을 구분한다
+            - 중요한 버튼
+            - 덜 중요한 버튼
+            - 긍정 버튼
+            - 부정 버튼
+            - 위험한 버튼
+            - 경고 버튼
+            - 정보 버튼
+            - ...
+            일반 스타일 : 기본 버튼
+            확장 스타일 : 중요한 버튼, 덜 중요한 버튼, 경고 버튼, 위험 버튼, 성공 버튼
+        */
+
+        .btn {
+            border:1px solid gray;
+            border-radius: 0.25em;
+            padding:0.5em;
+
+            color:gray;
+            background-color: white;
+
+            cursor: pointer;
+
+            /* 어떤 속성을 inherit로 설정하면 기본값이 아니라 외부의 항목을 그대로 상속받아 쓰겠다는 의미 */
+            font:inherit;
+        }
+        .btn:hover {
+            color:black;
+            border-color: black;
+        }
+
+        .btn.btn-primary {
+            border-color: #0984e3;
+            background-color: #0984e3;
+            color:white;
+        }
+        .btn.btn-primary:hover {
+            border-color: #0769b5;
+            background-color:#0769b5;
+        }
+
+        .btn.btn-secondary {
+            border-color: #636e72;
+            background-color: #636e72;
+            color: white;
+        }
+        .btn.btn-secondary:hover {
+            border-color: #4f585b;
+            background-color: #4f585b;
+        }
+
+        .btn.btn-success{
+            border-color:#00b894;
+            background-color:#00b894;
+            color:white;
+
+        }
+        .btn.btn-success:hover{
+            border-color:#009376;
+            background-color:#009376;
+        }
+
+        .btn.btn-warning{
+            border-color:#fdcb6e;
+            background-color:#fdcb6e;
+            color:white;
+        }
+        .btn.btn-warning:hover{
+            border-color:#fcb126;
+            background-color:#fcb126;
+        }
+
+        .btn.btn-danger{
+            border-color:#d63031;
+            background-color:#d63031;
+            color:white;
+
+        }
+        .btn.btn-danger:hover{
+            border-color:#ae2223;
+            background-color:#ae2223;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="container w500">
+        <div class="row">
+            <input type="button" value="일반 버튼 샘플" class="btn">
+        </div>
+        
+        <div class="row">
+            <input type="submit" value="등록 버튼 샘플" class="btn">
+        </div>
+
+        <div class="row">
+            <button type="button" class="btn">일반 버튼 샘플</button>
+        </div>
+
+        <div class="row">
+            <button type="submit" class="btn">등록 버튼 샘플</button>
+        </div>
+
+        <div class="row">
+            <a href="#" class="link link-btn">링크 버튼 샘플</a>
+        </div>
+
+        <div class="row">
+            <button type="button" class="btn fill">일반 버튼 샘플</button>
+        </div>
+
+        <div class="row">
+            <button type="button" class="btn btn-primary">중요 버튼 샘플</button>
+        </div>
+
+        <div class="row">
+            <button type="button" class="btn btn-secondary">덜 중요 버튼 샘플</button>
+        </div>
+
+        <div class="row">
+            <button type="button" class="btn btn-success">성공 버튼 샘플</button>
+        </div>
+
+        <div class="row">
+            <button type="button" class="btn btn-warning">경고 버튼 샘플</button>
+        </div>
+
+        <div class="row">
+            <button type="button" class="btn btn-danger">위험 버튼 샘플</button>
+        </div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택자</title>
+    <style>
+        /*
+        h1- 모든 h1 태그
+        */
+      
+        #target{
+            color:red
+        }
+        .temp{
+            background-color: skyblue;
+        }
+    </style>
+
+</head>
+<body>
+    <!-- id에 부여되는 값은 페이지 내에서 유일해야 한다
+        class는 중복해서 부여가 가능하다
+    -->
+    <h1>한석아 잘하고 있다</h2>
+    <h1 id="target">한석아 잘하고 있다</h1>
+    <h1 class ="temp">한석아 잘하고 있다</h1>
+    <h1 class ="temp">한석아 잘하고 있다</h1>
+    <h1>한석아 잘하고 있다</h1>
+</body>
+</html>
