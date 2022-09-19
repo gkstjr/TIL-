@@ -13,14 +13,13 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 import org.zerock.domain.Ticket;
 
-import com.google.gson.Gson;
 
 import lombok.Setter;
 import lombok.extern.log4j.Log4j2;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
-@ContextConfiguration({"file:src/main/webapp/WEB-INF/spring/root_context.xml",
+@ContextConfiguration({"file:src/main/webapp/WEB-INF/spring/root-context.xml",
 						"file:src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml"
 })
 @Log4j2
