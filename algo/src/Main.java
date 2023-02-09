@@ -1,6 +1,8 @@
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.util.StringTokenizer;
 
 
@@ -10,17 +12,22 @@ public class Main {
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st;
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		
-		int sumReq = Integer.parseInt(br.readLine());
 		int n = Integer.parseInt(br.readLine());
-		int answer = 0;
+		
 		for(int i = 0; i < n; i++) {
 			st = new StringTokenizer(br.readLine());
-			int price = Integer.parseInt(st.nextToken());
-			int num = Integer.parseInt(st.nextToken());
-			answer += price * num;
+			int a = Integer.parseInt(st.nextToken());
+			int b = Integer.parseInt(st.nextToken());
+			
+			bw.write("Case #" + (i+1) +": " + a + " + " + b + " = "  + (a + b) + "\n");
 		}
-		if(answer == sumReq) System.out.println("Yes");
-		else System.out.println("No");
+		
+		br.close();
+		bw.flush();
+		bw.close();
+	
+	
 	}
 }	
