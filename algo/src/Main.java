@@ -13,27 +13,31 @@ import java.util.StringTokenizer;
 public class Main {
 	
 	public static void main(String[] args) throws NumberFormatException, IOException {
-		
+
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		int n = Integer.parseInt(br.readLine());
+
 		StringTokenizer st;
-		for(int i =0; i<n; i++) {
-			st  = new StringTokenizer(br.readLine());
-			int first = Integer.parseInt(st.nextToken());
-			int[] arr = new int[first];
-			double sum = 0;
-			for(int j =0; j<first; j++) {
-				arr[j] = Integer.parseInt(st.nextToken());
-				sum += arr[j];
+		
+		int[][] box = new int[100][100];
+		
+		int n = Integer.parseInt(br.readLine());
+		
+		for(int i = 0; i < n; i++) {
+			st = new StringTokenizer(br.readLine());
+			int x = Integer.parseInt(st.nextToken());
+			int y = Integer.parseInt(st.nextToken());
+			for(int j = y ; j<y+10; j++) {
+				for(int k = x; k < x + 10; k++) {
+					box[j][k] = 1;
+				}
 			}
-			double cnt = 0;
-			double avg = sum / (double)first;
-			
-			for(int j=0; j<first; j++) {
-				if(arr[j] > avg) cnt++;
-			}
-			System.out.printf("%.3f%%\n",(cnt /first) *100);
 		}
-		br.close();
+		int sum = 0;
+		for(int i = 0; i< box.length; i++) {
+			for(int j = 0; j<box[i].length; j++) {
+				sum += box[i][j];
+			}
+		}
+		System.out.println(sum);
 	}
 }	
