@@ -32,6 +32,7 @@ public class Main22 {
 			else if(i >= 19 && i <=21) arr[i] = 9;
 			else if(i >= 22 && i <=25) arr[i] = 10;
 			
+			
 		}
 			int sum =0;
 		for(int i =0;i<str.length();i++) {
