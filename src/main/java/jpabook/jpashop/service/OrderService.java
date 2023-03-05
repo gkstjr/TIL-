@@ -8,6 +8,7 @@ import jpabook.jpashop.domain.item.Item;
 import jpabook.jpashop.repository.ItemRepository;
 import jpabook.jpashop.repository.MemberRepository;
 import jpabook.jpashop.repository.OrderRepository;
+import jpabook.jpashop.repository.OrderSearch;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -34,10 +35,10 @@ public class OrderService {
 
         //주문상품 생성
         OrderItem orderItem = OrderItem.createOrderItem(item,item.getPrice(),count);
-
+        System.out.println("힌삭 orderItem = " + orderItem);
         //주문 생성
        Order order = Order.createOrder(member, delivery, orderItem);
-
+        System.out.println("한석" + order.getMember());
        //주문 저장
         orderRepository.save(order);
 
@@ -54,7 +55,7 @@ public class OrderService {
     }
 
     //검색
-//    public List<Order> findOrders(OrderSearch orderSearch) {
-//        return orderRepository.findAll(orderSearch);
-//    }
+    public List<Order> findOrders(OrderSearch orderSearch) {
+        return orderRepository.findAllByString(orderSearch);
+    }
 }
