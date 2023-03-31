@@ -13,14 +13,10 @@ import java.util.StringTokenizer;
 public class Main29 {
 	
 	public static void main(String[] args) throws NumberFormatException, IOException {
-
+		//단일 연산이므로 연산을 하는 횟수만큼 시간 복잡도 고
 	
-		String a = "한석";
-		int b = 3;
 		
-//		System.out.println(a / b); 	컴파일 오류1
-//		System.out.println(a % b); 컴파일 오류2
-		System.out.println(a + b );
-//		System.out.println(a - b);컴파일 오류3
+		System.out.println("1");
+		System.out.println("0");
 	}	
 }	
