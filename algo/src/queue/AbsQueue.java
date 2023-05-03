@@ -1,3 +1,4 @@
+package queue;
 import java.util.Scanner;
 import java.util.Stack;
 import java.util.StringTokenizer;
@@ -13,7 +14,7 @@ import java.util.LinkedList;
 import java.util.PriorityQueue;
 import java.util.Queue;
  
-public class Main {
+public class AbsQueue {
 	
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		
