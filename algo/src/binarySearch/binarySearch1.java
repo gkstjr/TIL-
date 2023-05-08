@@ -23,6 +23,7 @@ public class binarySearch1 {
 			
 		}
 		
+		
 		Arrays.sort(arr);
 		
 		int m = Integer.parseInt(br.readLine());
