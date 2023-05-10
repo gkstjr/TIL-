@@ -1,4 +1,4 @@
-class Solution {	
+class Solution19 {	
 	//	 public static void main(String[] args) {
 //	    	Solution sol = new Solution();
 //	    	System.out.println(sol.solution("<","=",20,50));
