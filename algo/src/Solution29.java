@@ -1,4 +1,4 @@
-class Solution {	
+class Solution29 {	
 //		 public static void main(String[] args) {
 //	    	Solution sol = new Solution();
 //	    	int[] num = {0,1,2,4,3};
