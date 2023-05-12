@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-class Solution {	
+class Solution34 {	
 //		 public static void main(String[] args) {
 //	    	Solution sol = new Solution();
 ////	    	int[] num = {0,1,2,4,3};
