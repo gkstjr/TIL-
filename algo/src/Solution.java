@@ -12,6 +12,7 @@ class Solution {
 //	    	System.out.println(sol.solution(l,r)[5]);
 //	    } 
 		
+	
 	 public List<Integer> solution(int[] arr) {
 		 List<Integer> answer = new ArrayList<Integer>();
 		 int i = 0;
