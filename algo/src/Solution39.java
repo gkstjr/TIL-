@@ -1,8 +1,8 @@
 
 
-class Solution {	
+class Solution39 {	
 		 public static void main(String[] args) {
-	    	Solution sol = new Solution();
+	    	Solution39 sol = new Solution39();
 //	    	int[] num = {0,1,2,4,3};
 //	    	int[][] num2 = {{0, 4, 2},{0, 3, 2},{0, 2, 2}};
 //	    	System.out.println(num[1]);
