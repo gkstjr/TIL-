@@ -44,6 +44,7 @@ public class bruteForce2 {
 			//해당 열(depth)에서 행(i) 가 퀸을 놓을 수 있는지 조건문으로 true false판별
 			if(Possibility(depth)) {
 				nQueen(depth + 1);
+				
 			}
 		}
 	}
