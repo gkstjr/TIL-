@@ -8,7 +8,7 @@ import java.util.Collections;
 import java.util.StringTokenizer;
 
 public class Main40 {
-	
+	//백준 알고리즘 정
 	public static void main(String[] args) throws NumberFormatException, IOException {
 	
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -17,6 +17,7 @@ public class Main40 {
 		st = new StringTokenizer(br.readLine());
 		int N = Integer.parseInt(st.nextToken());
 		int K = Integer.parseInt(st.nextToken());
+		
 		
 		
 		int[] arr = new int[N];
