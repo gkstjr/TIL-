@@ -24,4 +24,6 @@ public interface List<E> {
 	
 	public void clear();
 	
+	//더블 링크드 리스트도정리하
+	
 }
