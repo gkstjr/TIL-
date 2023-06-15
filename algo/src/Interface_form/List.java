@@ -24,6 +24,7 @@ public interface List<E> {
 	
 	public void clear();
 	
-	//더블 링크드 리스트도정리하
+	//더블 링크드 리스트도정리하기
+	//연결 스트를 이용한 큐 구현해보기 LinkedList
 	
 }
