@@ -6,8 +6,8 @@ class Solution {
 		Solution sol = new Solution();
 	    	int[] num = {0,1,2,4,3};
 		int[][] num2 = { { 2, 3 }, { 0, 7 }, { 5, 9 }, { 6, 10 } };
-	    	System.out.println(num[1]);
-	    	System.out.println(sol.solution("rermgorpsam", num2));
+//	    	System.out.println(num[1]);
+//	    	System.out.println(sol.solution("rermgorpsam", num2));
 	}
 
 	public int solution(String my_string, String is_suffix) {
