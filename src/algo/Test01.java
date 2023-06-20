@@ -1,4 +1,4 @@
-package javaStudy;
+package algo;
 
 public class Test01 {
 	public static void main(String[] args) {

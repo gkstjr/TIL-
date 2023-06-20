@@ -1,11 +1,11 @@
-package javaStudy;
-//ë°°ì—´ ì—°ìŠµ
+package algo;
+//ë°°ì—´ ?—°?Šµ
 public class for01 {
 	public static void main(String[] args) {
 		String[] a = new String[3];
-		a[0] = "ì•ˆë…•";
-		a[1] = "ë‚˜ëŠ” ";
-		a[2] = "ê¹€í•œì„ì´ë¼ê³ í•´";
+		a[0] = "?•ˆ?…•";
+		a[1] = "?‚˜?Š” ";
+		a[2] = "ê¹??•œ?„?´?¼ê³ í•´";
 		 
 		System.out.print(a[0] + " ");
 		System.out.print(a[1]);
