@@ -7,54 +7,52 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.StringTokenizer;
 
-public class Main {
+class Main {
 	public static void main(String[] args) throws IOException {
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
-		StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+		int n = Integer.parseInt(br.readLine());
 		
-		int N = Integer.parseInt(st.nextToken());
-		int M = Integer.parseInt(st.nextToken());
-		
-		int[] tree = new int[N];
-		
-		int min = 0;
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		int[] arr = new int[n];
 		int max = 0;
+		int min = 0;
 		
-		st = new StringTokenizer(br.readLine(), " ");
-		for(int i = 0; i < N; i++) {
-			tree[i] = Integer.parseInt(st.nextToken());
+		for(int i = 0 ; i < n; i++) {
+			arr[i] = Integer.parseInt(st.nextToken());
 			
-			if(max < tree[i]) {
-				max = tree[i];
+			if(max < arr[i]) {
+				max = arr[i];
 			}
 		}
+		int m = Integer.parseInt(br.readLine());
+		max++;
 		
+		long sum = 0;
+		int mid = 0;
 		while(min < max) {
+			sum = 0;
+			mid = (min + max) / 2;
 			
-			int mid = (min + max) / 2;
-			long sum = 0;
-			for(int treeHeight : tree) {
-				
-			
-				if(treeHeight - mid > 0) { 
-					sum += (treeHeight - mid);
+			for(int i = 0 ; i < arr.length; i++) {
+				if(arr[i] < mid) {
+					sum += arr[i];
+				}else {
+					sum += mid;
 				}
 			}
 			
-		
-			if(sum < M) {
-				max = mid;
-			}
-			
-		
-			else {
+			if(sum < m) {
 				min = mid + 1;
 			}
+			else {
+				max = mid;
+			}
+	
 		}
 		
-		System.out.println(min - 1);
+		System.out.println(mid);
 		
-	}
+ 	}
 }

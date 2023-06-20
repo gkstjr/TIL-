@@ -31,7 +31,7 @@ public class binarySearch5 {
 			}
 		}
 		
-		while(min < max) {
+		while(min <= max) {
 			
 			int mid = (min + max) / 2;
 			long sum = 0;
