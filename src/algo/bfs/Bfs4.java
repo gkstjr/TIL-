@@ -11,7 +11,7 @@ import java.util.Queue;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 
-class Main {
+class Bfs4 {
 		
 	static int m , n;
 	static int[][] arr;
