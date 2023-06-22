@@ -1,81 +1,82 @@
 package algo.bfs;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+import java.util.Scanner;
 import java.util.StringTokenizer;
 
 class Main {
-	public static void main(String[] args) {
+		
+	static int m , n;
+	static int[][] arr;
+	static boolean[][] visited;
+	static int count;
+	static int[] horizon = {0 , 1 , 0 , -1};
+	static int[] vertical = {1 , 0 , -1 , 0};
+	
+	public static void main(String[] args) throws NumberFormatException, IOException  {
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringTokenizer st;
 		StringBuilder sb = new StringBuilder();
+		StringTokenizer st;
 		
+		int T = Integer.parseInt(br.readLine());
+		
+		while(T != 0) { // 테스트 케이스맏 ㅏ반복
 		st = new StringTokenizer(br.readLine());
+		m = Integer.parseInt(st.nextToken());
+		n = Integer.parseInt(st.nextToken());
+		int k = Integer.parseInt(st.nextToken());
 		
-		int nodeCount = Integer.parseInt(st.nextToken());
-		int lineCount = Integer.parseInt(st.nextToken());
-		int startNode = Integer.parseInt(st.nextToken());
-		
-		Node[] nodes = new Node[nodeCount + 1];
-		for(int i = 0 ; i < nodeCount + 1; i++) {
-			nodes[i] = new Node(i);			
-		}
-		
-		for(int i = 0 ; i < lineCount; i++) { // 노드 인접 설정해주기
-			int n = Integer.parseInt(br.readLine());
-			int m = Integer.parseInt(br.readLine());
+		arr = new int[n][m];
+		visited = new boolean[n][m];
+			count = 0;
+			T--;
 			
-			nodes[n].addSide(nodes[m]);
-			nodes[m].addSide(nodes[n]);
+			for(int i = 0 ; i < k; i++) {
+				st = new StringTokenizer(br.readLine());
+				int x = Integer.parseInt(st.nextToken());
+				int y = Integer.parseInt(st.nextToken());
+				
+				arr[y][x] = 1;
+			}
+			
+			
+			for(int i = 0 ; i < n; i++) {
+				for(int j = 0 ; j < m; j++) {
+					if(!visited[i][j] && arr[i][j] == 1) {
+						count++;
+						visited[i][j] = true;
+						Bfs(i,j);
+					}
+				}
+			}
+			
+			sb.append(count).append("\n");
 		}
+		System.out.println(sb);
 		
-		for(Node nd : nodes) {
-			nd.neighbours.sort(new Com());
+	}
+
+	private static void Bfs(int i , int j) {
+		
+		for(int k = 0; k < 4; k++) {
+			int nextX = i + horizon[k];
+			int nextY = j + vertical[k];
+			
+			if(nextX >= 0 && nextY >=0 && nextX < n && nextY < m) {			
+				if(!visited[nextX][nextY] && arr[nextX][nextY] == 1) {
+					visited[nextX][nextY] = true;
+					Bfs(nextX,nextY);
+				}
+			}
 		}
-		
-		DFS(nodes[startNode]);
-		
-	}		
-}
-
-
-//정렬 기준
-class Com implements Comparator<Node> {
-	@Override
-	public int compare(Node o1, Node o2) {
-		return Integer.compare(o1.info, o2.info);
 	}
-}
-
-// 클래스 node 구현
-class Node {
-	int info;
-	boolean visited;
-	List<Node> neighbours; // 인접 목록
-	
-	Node(int info) { //생성자
-		this.info = info;
-		this.visited = false;
-		this.neighbours = new ArrayList<>();
-	}
-	
-	public void addSide(Node n) { //인접 목록 채우기
-		this.neighbours.add(n);
-	}
-	
-	public List<Node> getSide() { //인접 목록 반환
-		return neighbours;
-	}
-	
-	public void setSide(List<Node> n) {// 인접 목록 세팅
-		this.neighbours = n;
-	}
-	
-	@Override
-	public String toString() { // 출력 오버라이딩
-		return "" + info;
-	}
+    
 }

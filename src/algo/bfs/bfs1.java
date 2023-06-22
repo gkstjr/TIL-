@@ -1,4 +1,4 @@
-package algo;
+package algo.bfs;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -11,7 +11,7 @@ import java.util.Queue;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 
-class Main2 {
+class bfs1 {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -40,7 +40,7 @@ class Main2 {
         reset(nodes);
 
         BFS(nodes[startNode]);
-    }
+    } // main 场
 
     static void reset(Node[] nodes){
         for(Node v : nodes)
@@ -61,6 +61,7 @@ class Main2 {
     }
 
     static Queue<Node> queue = new LinkedList<>();
+    
     static void BFS(Node node){
         node.visited = true;
         queue.add(node);
@@ -81,19 +82,19 @@ class Main2 {
     }
 }
 
-class Com implements Comparator<Node>{
+class Com2 implements Comparator<Node>{
     @Override
     public int compare(Node o1, Node o2) {
         return Integer.compare(o1.info, o2.info);
     }
 }
 
-class Node {
+class Node2 {
     int info;
     boolean visited;
     List<Node> neighbours; //牢立 格废
 
-    Node(int info){ //积己磊
+    Node2(int info){ //积己磊
         this.info = info;
         this.visited = false;
         this.neighbours = new ArrayList<>();
