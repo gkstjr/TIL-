@@ -1,4 +1,4 @@
-package algo.bfs;
+package algo.dfs;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -86,34 +86,5 @@ class Com2 implements Comparator<Node>{
     @Override
     public int compare(Node o1, Node o2) {
         return Integer.compare(o1.info, o2.info);
-    }
-}
-
-class Node2 {
-    int info;
-    boolean visited;
-    List<Node> neighbours; //인접 목록
-
-    Node2(int info){ //생성자
-        this.info = info;
-        this.visited = false;
-        this.neighbours = new ArrayList<>();
-    }
-
-    public void addSide(Node n) { //인접 목록 채우기
-        this.neighbours.add(n);
-    }
-
-    public List<Node> getSide(){ //인접 목록 반환
-        return neighbours;
-    }
-
-    public void setSide(List<Node> n) { // 인접 목록 세팅
-        this.neighbours = n;
-    }
-
-    @Override
-    public String toString() { //출력 오버라이딩
-        return "" + info;
     }
 }
