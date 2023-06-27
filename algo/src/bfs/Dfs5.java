@@ -1,71 +1,82 @@
 package bfs; 
-import java.util.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 import java.util.Scanner;
 import java.util.StringTokenizer;
-//DFs 정리 정보처리기사공부 준비 이유로 한달동안은 풀었던 문제 복기 정도만 하기
-class Dfs5 {
-		static int n;
-		static int[][] arr;
-		static boolean[][] visited;
-		static int count;
-		static ArrayList<Integer> list = new ArrayList<Integer>();
-		static int[] dx = {1,0,-1,0};
-		static int[] dy = {0,1,0,-1};
+
+class Main {
+	static int count;
+	
 	public static void main(String[] args) throws NumberFormatException, IOException {
+		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringBuilder sb = new StringBuilder();
 		
-		n = Integer.parseInt(br.readLine());
+		StringTokenizer st;
 		
-		arr = new int[n][n];
-		visited = new boolean[n][n];
-		for(int i = 0 ; i < n; i++) {
-			String str = br.readLine();
-			for(int j = 0; j < n; j++) {
-				arr[i][j] = Integer.parseInt(String.valueOf(str.charAt(j)));
-			}
+		int nodeCount = Integer.parseInt(br.readLine());
+		int lineCount = Integer.parseInt(br.readLine());
+		
+		Node[] nodes = new Node[nodeCount + 1];
+		for(int i = 0 ; i < nodeCount + 1; i++) {
+			nodes[i] = new Node(i);
 		}
 		
-		for(int i = 0; i < n; i++) {
-			for(int j = 0 ; j < n; j++) {
-				if(!visited[i][j] && arr[i][j] == 1 ) {
-					count = 1;
- 				   list.add(Dfs(i,j));
-				}
-			}
+		for(int i = 0 ; i < lineCount; i++) {
+			st = new StringTokenizer(br.readLine());
+			int N = Integer.parseInt(st.nextToken());
+			int M = Integer.parseInt(st.nextToken());
+			
+			nodes[N].addSide(nodes[M]);
+			nodes[M].addSide(nodes[N]);
 		}
-		Collections.sort(list);
-		sb.append(list.size()).append("\n");
-		for(int answer : list) {
-			sb.append(answer).append("\n");
-		}
-		System.out.println(sb);
+	
+		Dfs(nodes[1]);
+		System.out.println(count - 1);
 	}
 
-	private static int Dfs(int i, int j) {
+	private static void Dfs(Node node) {
+		count++;
+		node.visited = true;
+		List<Node> list = node.neighbors;
 		
-		for(int k = 0; k < 4; k++) {
-			visited[i][j] = true;
-			int nextX = i + dx[k];
-			int nextY = j + dy[k];
+		for(Node n : list) {
+			if(!n.visited) {
 			
-			if(nextX >=0 && nextY >=0 && nextX < n && nextY < n) {
-				if(!visited[nextX][nextY] && arr[nextX][nextY] == 1) {
-					count++;
-//					visited[nextX][nextY] = true;
-					Dfs(nextX,nextY);
-				}
+				Dfs(n);
 			}
 		}
-		return count; 
+		
+	}
+}
+
+
+class Node {
+	int info;
+	boolean visited;
+	List<Node> neighbors;
+	
+	Node(int info) {
+		this.info = info;
+		this.visited = false;
+		this.neighbors = new ArrayList<Node>();
+	}
+	
+	public void addSide(Node n) {
+		this.neighbors.add(n);
+	}
+	
+	public List<Node> getSide() {
+		return neighbors;
+	}
+	
+	@Override
+	public String toString() {
+		return "" + info;
 	}
 }
