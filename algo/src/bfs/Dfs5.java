@@ -42,7 +42,7 @@ class Main {
 
 	private static void Dfs(Node node) {
 		count++;
-		node.visited = true;
+		node.visited = true;  
 		List<Node> list = node.neighbors;
 		
 		for(Node n : list) {
@@ -56,27 +56,4 @@ class Main {
 }
 
 
-class Node {
-	int info;
-	boolean visited;
-	List<Node> neighbors;
-	
-	Node(int info) {
-		this.info = info;
-		this.visited = false;
-		this.neighbors = new ArrayList<Node>();
-	}
-	
-	public void addSide(Node n) {
-		this.neighbors.add(n);
-	}
-	
-	public List<Node> getSide() {
-		return neighbors;
-	}
-	
-	@Override
-	public String toString() {
-		return "" + info;
-	}
-}
+
