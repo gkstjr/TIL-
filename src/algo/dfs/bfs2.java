@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Queue;
 import java.util.Scanner;
 import java.util.StringTokenizer;
-
+	//정보처리기사 실기 기간 1일 1문제 복기 완료 
 class bfs2 {
 	static int count;
 	
