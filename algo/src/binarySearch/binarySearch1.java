@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
  
-public class binarySearch1 {
+public class binarySearch1 { //이진 탐색 알고리즘 복기하
 	
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		
