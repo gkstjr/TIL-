@@ -8,7 +8,7 @@ import java.util.StringTokenizer;
 
 //import programmers.Solution;
 
-public class binarySearch2 {
+public class binarySearch2 { // 이분 탐색 알고리즘 복기 중
 	
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		
