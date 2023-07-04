@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.StringTokenizer;
 
-public class binarySearch4 {
+public class binarySearch4 {// 이분 탐색 알고리즘 복기 중
 	public static void main(String[] args) throws NumberFormatException, IOException {
 	
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
