@@ -11,7 +11,7 @@ import java.util.Queue;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 
-class Bfs4 {
+class Bfs4 { 	//너비 우선 탐색 복기 완료 
 		
 	static int m , n;
 	static int[][] arr;
