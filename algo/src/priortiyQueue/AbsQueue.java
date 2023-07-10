@@ -14,7 +14,7 @@ import java.util.LinkedList;
 import java.util.PriorityQueue;
 import java.util.Queue;
  
-public class AbsQueue {
+public class AbsQueue { //AbsQueue 문제 복습
 	
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		
