@@ -16,7 +16,7 @@ import java.util.LinkedList;
 import java.util.PriorityQueue;
 import java.util.Queue;
  
-public class MaxQueue {
+public class MaxQueue {//MaxQueue 문제 복습
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
