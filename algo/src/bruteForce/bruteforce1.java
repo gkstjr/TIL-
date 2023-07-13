@@ -16,7 +16,7 @@ import java.util.LinkedList;
 import java.util.PriorityQueue;
 import java.util.Queue;
  
-public class bruteforce1 {
+public class bruteforce1 { //브루트 포스 알고리즘 복기
 	 
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		
