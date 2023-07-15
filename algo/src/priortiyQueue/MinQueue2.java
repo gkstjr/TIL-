@@ -14,7 +14,7 @@ import java.util.LinkedList;
 import java.util.PriorityQueue;
 import java.util.Queue;
  
-public class MinQueue2 {
+public class MinQueue2 {// MinQueue 복기
 	 
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		
