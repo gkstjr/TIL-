@@ -14,7 +14,7 @@ import java.util.LinkedList;
 import java.util.PriorityQueue;
 import java.util.Queue;
  
-public class AbsQueue {
+public class AbsQueue {// 정치기 기간 복습중
 	
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		
