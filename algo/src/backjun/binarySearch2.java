@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
  
-public class binarySearch2 {
+public class binarySearch2 {// 정처기 시험 끝!! 마지막 복기 후 다음주부터 다시 문제 풀
 	
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		
