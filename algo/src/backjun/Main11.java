@@ -11,7 +11,7 @@ import java.util.Scanner;
 import java.util.StringTokenizer;
 
 
-public class Main11 {
+public class Main11 { // 복습1
 	
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		
