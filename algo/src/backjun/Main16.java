@@ -11,7 +11,8 @@ import java.util.Scanner;
 import java.util.StringTokenizer;
 
 
-public class Main16 {
+public class Main16 { // 연산문제 복기중
+	
 	
 	public static int Solution(int n)	{
 		int cnt = 0;
