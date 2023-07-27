@@ -8,7 +8,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.StringTokenizer;
 
-public class Main44 {
+public class Main44 { // ∫π±‚¡ﬂ
 	
 	public static void main(String[] args) throws NumberFormatException, IOException {
 	
