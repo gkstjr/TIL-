@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
  
-public class StudyDF {
+public class StudyDF { // 첫 DP 문제인데 이론은 쉬워보였는데 문제풀려고 하니 조그만 부분에서부터의 규칙을 찾아내지 못하겠음..
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		
 		int[] dp = new int[11];
