@@ -13,7 +13,7 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Queue;
  
-public class Main62 {
+public class Main62 { //알고리즘 복기중
 	public static boolean[] prime;	
 	
 	public static void main(String[] args) throws NumberFormatException, IOException {
