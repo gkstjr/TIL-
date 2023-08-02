@@ -1,22 +1,21 @@
-# TIL (2022-02-10 ~ ) 
-
-- 학습후 키워드 위주로(간단하게) 정리해보자  
-- 알고리즘,자료구조 공부 + 코딩테스트(백준 단계별/분류별 푼 후 프로그래머스 Level 순서대로 풀기)
-- 기록을 습관화하자(개발 관련 기록 블로그 시작 2023-02 ~) 
-
-# Java
-  - [ 원시형vs참조형](https://github.com/gkstjr/TIL-/blob/bcd1b5da4e8d7d8eba845be45bec2ae9e2228957/src/javaStudy/%EC%9B%90%EC%8B%9C%ED%98%95vs%EC%B0%B8%EC%A1%B0%ED%98%95.md)
-  - [이스케이프 문자](https://github.com/gkstjr/TIL-/blob/4bbd08cd947dec2ef549f5405929e4f1e2b445bb/src/%EC%9D%B4%EC%8A%A4%EC%BC%80%EC%9D%B4%ED%94%84%EB%AC%B8%EC%9E%90.md)
-  - [표준 입력](https://github.com/gkstjr/TIL-/blob/022b561d064e7fab110753493b96b7e0ee19bae5/src/%ED%91%9C%EC%A4%80%EC%9E%85%EB%A0%A5.md)
-  - [표준 출력](https://github.com/gkstjr/TIL-/blob/394cd675026be0eab7749cbedf129112acedfdc9/src/%ED%91%9C%EC%A4%80%EC%B6%9C%EB%A0%A5.md)
-  - [If문](https://github.com/gkstjr/TIL-/blob/921ddac1966cf5e77f2aea0cb388106267eac7c1/src/if%EB%AC%B8.md)
-  - [for문](https://github.com/gkstjr/TIL-/blob/1b654ca9e225e533c5d2203bb34709aef880d2ea/src/for%EB%AC%B8.md)
-  - [배열](https://github.com/gkstjr/TIL-/blob/2d080254dca8e244304dafde5e303810cdf9c562/src/javaStudy/array.md)
-  - [객체 지향 프로그래밍](https://github.com/gkstjr/TIL-/blob/4dfac3e976235e0f140516b5856edc752e29befc/src/javaStudy/object.md)
--------------------------
+# 코딩은 취미죠! <br> 꾸준히 하다보면 모두 다 나의 밑거름이 된다.
 
 
+## 혼자 알고리즘 공부🚀
+- #### 2023.08.02 ~ 2023.09.01 [**(plzrun's 님 블로그 문제 한달 끝내기)**](https://plzrun.tistory.com/entry/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4PS-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0)  ->  한달 끝낸 후 [**해당 블로그 순서대로 풀기**](https://dev-dain.tistory.com/155)
+- ##### 평일 2h 주말 5h 유지하기 (한주 정도 해보고 문제 개수로 정할 계획)
+- ##### 자력으로 풀지 못 한 문제들은 취소선 으로 표기 할 것  
+- ##### 입출력 문제들을 풀 때 10분이상 이 문제를 붙들고 있는 경우, 그건 입출력에서 뭔가 모르는 부분이 반드시 있다는 뜻이므로 보완하기.
 
+
+---
+
+## 주제와 문제📖
+| 주차 | 주제 |
+|---|---|
+| 1  |  **입출력 문제**  <br>문제 : 2557, 1000, 2558, 10950, 10951, 10952, 10953, 11021, 11022, 11718, 11719, 11720, 11721, 2741, 2742, 2739, 1924, 8393, 10818, 2438, 2439, 2440, 2441, 2442, 2445, 2522, 2446, 10991, 10992|
+| 2  |  **자료구조** (스택/큐/덱/힙) :: 장수현<br>[수업자료](https://github.com/dev-dain/Dukgorithm/blob/master/week2/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%20%EC%8A%A4%ED%84%B0%EB%94%94%202%EC%A3%BC%EC%B0%A8.pdf)<br>[문제집](https://www.acmicpc.net/workbook/view/8999) |
+| 3  |  **재귀함수**의 이해 & 여러 가지 **정렬** :: 주경연<br>[수업자료](https://github.com/dev-dain/Dukgorithm/blob/master/week3/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%20%EC%8A%A4%ED%84%B0%EB%94%94%203%EC%A3%BC%EC%B0%A8.pptx)<br>[문제집](https://www.acmicpc.net/workbook/view/9000) |
 
 
 
