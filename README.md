@@ -2,8 +2,9 @@
 
 
 ## 혼자 알고리즘 공부🚀
-#### 2023.08.02 ~ 2023.09.01 [**(plzrun's 님 블로그 문제 한달 끝내기)**](https://plzrun.tistory.com/entry/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4PS-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0)  ->  한달 끝낸 후 [**해당 블로그 순서대로 풀기**](https://dev-dain.tistory.com/155)
-##### 평일 2h 주말 5h 유지하기 (한주 정도 해보고 문제 개수로 정할 계획)
+- #### 2023.08.02 ~ 2023.09.01 [**(plzrun's 님 블로그 문제 한달 끝내기)**](https://plzrun.tistory.com/entry/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4PS-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0)  ->  한달 끝낸 후 [**해당 블로그 순서대로 풀기**](https://dev-dain.tistory.com/155)
+- ##### 평일 2h 주말 5h 유지하기 (한주 정도 해보고 문제 개수로 정할 계획)
+- ##### 자력으로 풀지 못 한 문제들은<span style="color:blue">파란색</span>으로 표시할 것
 
 ---
 
