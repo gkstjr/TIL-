@@ -1,24 +1,8 @@
 # 코딩을 취미처럼! 꾸준히 하다보면 모두 다 나의 밑거름이 된다.
 
 ## 혼자 알고리즘 공부🚀
-#### 2023.08.02 ~ 2023.09.01 ([**plzrun's 님 블로그 한달 끝내기**](https://plzrun.tistory.com/entry/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4PS-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0)
-##### 매주 수요일 16:00 ~ 18:00
-
-## 진행방식💻
-- 16시
-	- 매주 최소 7문제를 풀고, 한 사람씩 돌아가면서 자신이 맡은 문제의 코드와 풀이 방식을 설명하고 질의응답. 한 사람당 최대 10분. 
-- 휴식
-- 17시
-	- 해당주에 정한 알고리즘 이론을 공부하고, 모범 코드를 보며 실제로 어떻게 코드를 짜야 하는지 공부함.
-	- 마치기 전 다음주 과제로 풀어올 5문제를 1인당 1문제씩 배정
-
----
-## 스터디 참여 인원👩‍💻
-- [**김다인**](https://github.com/dev-dain)
-- [**강수지**](https://github.com/KangSuzy)
-- [**손찬영**](https://github.com/helloimscy)
-- [**장수현**](https://github.com/soohyxn)
-- [**주경연**](https://github.com/Kyoung-yeon99)
+#### 2023.08.02 ~ 2023.09.01 ([**plzrun's 님 블로그 문제 한달 끝내기**])(https://plzrun.tistory.com/entry/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4PS-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0)
+##### 평일 2h 주말 5h 유지하기
 
 ---
 
