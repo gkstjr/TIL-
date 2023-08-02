@@ -13,28 +13,21 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Queue;
  
-public class Main62 { //알고리즘 복기중
-	public static boolean[] prime;	
-	
+public class Main64 {
+		static int[] arr;
+		static int cnt = 1;
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringBuilder sb = new StringBuilder();
 		
-		int n = Integer.parseInt(br.readLine());
-		if(n == 0) {
-			System.out.println(1);
-			return;
+		int N = Integer.parseInt(br.readLine());
+		
+		arr = new int[N + 1];
+		
+		for(int i = 1 ; i < N + 1; i++) {
+			arr[i] = Integer.parseInt(br.readLine());
 		}
 		
 
-		int sum = n;
-		n = n-1;
-		while(n!=0) {
-			sum *= n;   
-			n -= 1;
-		}
-		sb.append(sum);
-		System.out.println(sb);
-	}
+	}	
 }
