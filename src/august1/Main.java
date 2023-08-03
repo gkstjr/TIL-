@@ -16,14 +16,25 @@ public class Main {
 		StringBuilder sb = new StringBuilder();
 		
 		int n = Integer.parseInt(br.readLine());
-		
-		for(int i = n; i > 0; i--) {
-			for(int j = 1 ; j <= n; j++) {
-				if(j > n - i) sb.append("*");
-				else sb.append(" ");
+
+		for(int i = 1 ; i <= n; i++) {
+			for(int j = 1; j <= n - i; j++) {
+				sb.append(" ");
 			}
+			for(int k = 1; k <= i; k++) {
+				sb.append("*");
+			}
+			
 			sb.append("\n");
 		}
+		
+		for(int i = n - 1; i >= 1; i--) {
+			for(int j = 1; j <= n - i; j++) sb.append(" ");
+			for(int k = 1; k <= i; k++) sb.append("*");
+			sb.append("\n");
+		}
+		
+		
 		System.out.println(sb);
 	}
 }
