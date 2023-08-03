@@ -22,19 +22,15 @@ public class Main62 { //알고리즘 복기중
 		StringBuilder sb = new StringBuilder();
 		
 		int n = Integer.parseInt(br.readLine());
-		if(n == 0) {
-			System.out.println(1);
-			return;
+		int start = n ;
+		for(int i = 1; i <= n; i++) {
+			for(int j = 1; j <= 2 * n - 1; i++) {
+				if(j == start) sb.append("*");
+			}
+			start--;
+			sb.append("\n");
 		}
 		
-
-		int sum = n;
-		n = n-1;
-		while(n!=0) {
-			sum *= n;   
-			n -= 1;
-		}
-		sb.append(sum);
 		System.out.println(sb);
 	}
 }
