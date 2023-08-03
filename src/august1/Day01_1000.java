@@ -17,4 +17,5 @@ public class Day01_1000 {
 		
 		System.out.println(a + b);
 	}
+	
 }
