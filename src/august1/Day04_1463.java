@@ -17,7 +17,7 @@ import java.util.StringTokenizer;
  	    특이사항) 3 이나 2로 나누어 진다고 해서 1 뺴는 것 보다 최소값이 나오는 건 아니다.
  * */
 
-public class Main {
+public class Day04_1463 {
 		static Integer[] dp;
 		
 	public static void main(String[] args) throws NumberFormatException, IOException {
