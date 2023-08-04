@@ -8,7 +8,7 @@ import java.util.Calendar;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 
-public class Main {
+public class Day04_2446 {
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -17,27 +17,24 @@ public class Main {
 		
 		int n = Integer.parseInt(br.readLine());
 
-		for(int i = 1; i <= n; i++) {
-			for(int k = 1; k <= n - i; k++) {
-				if(i == n) {
-					break;
-				}
+		for(int i = n ; i >= 1; i-- ) {
+			for(int j = 1; j <= n - i; j++ ) {
 				sb.append(" ");
 			}
-			for(int j = 1; j <= i + (i - 1); j++) {
-				if(i == n || i == 1) {
-					sb.append("*");
-					
-				}else if(i == n - 1) {
-					if(j % 2 == 0 || j == n - 1) sb.append(" ");
-					else sb.append("*");	
-				}
-				else {		
-					if(j % 2 == 0) sb.append(" ");
-					else sb.append("*");		
-					
-				}
+			for(int k = 1; k <= 2 * i -1; k++) {
+				sb.append("*");
 			}
+			sb.append("\n");
+		}
+		
+		for(int i = 2; i <= n; i++) {
+			for(int j = 1 ; j <= n - i; j++) {
+				sb.append(" ");
+			}
+			for(int k = 1; k <= 2 * i - 1; k++) {
+				sb.append("*");
+			}
+		
 			sb.append("\n");
 		}
 		System.out.println(sb);
