@@ -14,7 +14,7 @@ import java.util.StringTokenizer;
 		 *  
 		 * 	모듈러 방식 나눗셈을 이해해야 한다.
 		 * */
-public class Main {
+public class Day08_2193 {
 	static Long[][] dp;
 	public static void main(String[] args) throws NumberFormatException, IOException {
 			
