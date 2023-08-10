@@ -9,41 +9,41 @@ import java.util.Scanner;
 import java.util.StringTokenizer;
 
 		/* 
-		 * 	dp[n(ÀÚ¸´¼ö)][ÀÚ¸´°ª]  = ÇØ´ç n ÀÇ ÀÚ¸´¼öÀÇ ÀÚ¸´°ªÀÇ ¿À¸§Â÷¼ø¸¸ °¡´ÉÇÑ °æ¿ìÀÇ ¼ö¸¦ ±¸ÇÔ
-		 *  recur ÇÔ¼ö¾È¿¡¼­ ¹İº¹¹® ÇÊ¿äÇÒÁöµµ?
-		 *  
-		 * 	¸ğµâ·¯ ¹æ½Ä ³ª´°¼ÀÀ» ÀÌÇØÇØ¾ß ÇÑ´Ù.
-		 *  !!! ¼öÀÇ ¹üÀ§ int¸¦ ³Ñ¾î¼­¼­ ¿À·ù »Õ¾î³¿ ½Ã°£ ¿À·¡ Àâ¾Æ¸Ô¾ú´Ù ¤Ğ¤Ğ
+		 * 	11055ë²ˆ ë¶€ë¶„ ìˆ˜ì—´ ê´€ë ¨ DP ë¬¸
+		 *  dp[n] = nê°œì˜ ìˆ˜ì—´ì¤‘ì—ì„œ ë¶€ë¶„ ì¦ê°€ ìˆ˜ì—´ì˜ í•©ì˜ ìµœëŒ€ê°’ì„ ë½‘ì•„
+		 * ì í™”ì‹ dp[n] = ì „ arr ìˆ˜ë¥¼ íƒìƒ‰í•˜ì—¬ í˜„ì¬ arr[n] ë³´ë‹¤ ì‘ì„ ë•Œ í•´ë‹¹ ìˆ˜ì˜ dpê°’ +	arr[n] ê°’ì´ ìµœëŒ€ì¸ ê°’ì´ dp[n]ì´ ëœë‹¤.
+		 * 	  
 		 * */
 public class Main {
-	static Long[][] dp;
-	public static void main(String[] args) throws NumberFormatException, IOException {
-			
+	public static void main(String[] args) throws IOException {
+		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
+		
 		int n = Integer.parseInt(br.readLine());
-		dp = new Long[91][2];
-		dp[1][1] = 1L;
-		dp[1][0] = 1L;
-				
-		System.out.println(recur(n,1));
-	}
-
-	static Long recur(int digit,int val) {
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		int[] seq = new int[n + 1];
+		int[] dp = new int[n + 1];
 		
-		if(digit == 1L) {
-			return dp[1][val];
+		for(int i = 1 ; i < n +1; i++) {
+			seq[i] = Integer.parseInt(st.nextToken());
 		}
-		
-		if(dp[digit][val] == null) {
-			
-			if(val == 0) {
-				dp[digit][val] = recur(digit - 1, 1) + recur(digit - 1, 0);
-			}else if(val == 1) {
-				dp[digit][val] = recur(digit - 1,0);
+  		
+		for(int i = 1; i < n + 1 ; i++) {
+			dp[i] = seq[i];
+			for(int j = i - 1; j >= 1; j--) {
+				if(seq[i] > seq[j]) {
+					dp[i] = Math.max(dp[i], dp[j] + seq[i]);
+				}
 			}
 		}
 		
-		return dp[digit][val];
+		int max = Integer.MIN_VALUE;
+		for(int i = 1; i < n + 1; i++) {
+			if(max < dp[i]) {
+				max = dp[i];
+			}
+		}
+		System.out.println(max);
 	}
 }
