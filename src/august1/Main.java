@@ -18,23 +18,16 @@ class Main {
         int n = Integer.parseInt(st.nextToken());
         int k = Integer.parseInt(st.nextToken());
         
-        boolean[] arr = new boolean[200000001];
+        Integer[] arr = new Integer[n];
         
         st = new StringTokenizer(br.readLine());
-        for(int i = 1 ; i < n + 1; i++) {
+        for(int i = 0 ; i < n; i++) {
         	int num = Integer.parseInt(st.nextToken());
-        	arr[num] = true;
+        	arr[i] = num;
         }
+
+        Arrays.sort(arr);
         
-        int cnt = 0;
-        for(int i = 1 ; i < 200000001; i++ ) {
-        	if(arr[i] == true) {
-        		cnt++;
-        		if(cnt == k) {
-        			System.out.println(i);
-        			break;
-        		}
-        	}
-        }
+        System.out.println(arr[k - 1]);
        }
 }
