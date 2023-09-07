@@ -23,10 +23,10 @@ public class Day06_1260 {
 		int M = Integer.parseInt(st.nextToken());
 		int start = Integer.parseInt(st.nextToken());
 		
-		Node[] nodes = new Node[N + 1];
+		Node1260[] nodes = new Node1260[N + 1];
 		
 		for(int i = 0 ; i < N + 1 ; i++) {
-			nodes[i] = new Node(i);
+			nodes[i] = new Node1260(i);
 		}
 		
 		for(int i = 0 ; i < M; i++) {
@@ -38,7 +38,7 @@ public class Day06_1260 {
 			nodes[b].addSide(nodes[a]);
 		}
 		
-		for(Node n : nodes) {
+		for(Node1260 n : nodes) {
 			Collections.sort(n.neighbors);
 		}
 		
@@ -51,36 +51,36 @@ public class Day06_1260 {
 		System.out.println(sb);
 	}
 	
-	static void Dfs(Node node) {
+	static void Dfs(Node1260 node) {
 		node.visited = true;
 		sb.append(node.info + " ");
 		
-		List<Node> neighbor = node.getSide();
+		List<Node1260> neighbor = node.getSide();
 		
-		for(Node nei : neighbor) {
+		for(Node1260 nei : neighbor) {
 			if(nei.visited != true) {
 				Dfs(nei);				
 			}
 		}
 	}
 	
-	static void reset(Node[] nodes){
-        for(Node v : nodes)
+	static void reset(Node1260[] nodes){
+        for(Node1260 v : nodes)
             v.visited=false;
     }
 
-	static Queue<Node> que = new LinkedList<Node>();
+	static Queue<Node1260> que = new LinkedList<Node1260>();
 	
-	static void Bfs(Node node) {
+	static void Bfs(Node1260 node) {
 		node.visited = true;
 		
 		que.offer(node);
 		sb.append(node.info + " ");
 		
 		while(!que.isEmpty()) {
-			Node nd = que.remove();
-			List<Node> nei = nd.getSide();
-			for(Node no : nei) {
+			Node1260 nd = que.remove();
+			List<Node1260> nei = nd.getSide();
+			for(Node1260 no : nei) {
 				if(no.visited != true) {
 					no.visited = true;
 					que.offer(no);
@@ -94,28 +94,28 @@ public class Day06_1260 {
 }
 
 
-class Node1260 implements Comparable<Node> {
+class Node1260 implements Comparable<Node1260> {
 	int info;
 	boolean visited;
-	List<Node> neighbors;
+	List<Node1260> neighbors;
 	
 	
 	Node1260(int info) {
 		this.info = info;
 		this.visited = false;
-		this.neighbors = new ArrayList<Node>();
+		this.neighbors = new ArrayList<Node1260>();
 	}
 	
-	void addSide(Node node) {
+	void addSide(Node1260 node) {
 		this.neighbors.add(node);
 	}
 	
-	List<Node> getSide() {
+	List<Node1260> getSide() {
 		return neighbors;
 	}
 
 	@Override
-	public int compareTo(Node o) {
+	public int compareTo(Node1260 o) {
 		
 	     if (this.info > o.info) {
 	            return 1;
