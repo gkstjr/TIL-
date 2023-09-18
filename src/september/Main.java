@@ -12,72 +12,41 @@ import java.util.List;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-import javax.xml.soap.Node;
-
 
 public class Main {
-	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-	static int N, M;
-	static int[][] box;
-	static Queue<toma> q = new LinkedList<toma>();
-	static int day =0;
-	static StringTokenizer st;
-	public static void main(String[] args) throws IOException {
-		st = new StringTokenizer(br.readLine());
-		M = Integer.parseInt(st.nextToken());
-	    N = Integer.parseInt(st.nextToken());
+	static int N;
+	static int[][] tree;
+	static StringBuilder sb = new StringBuilder();
 	
-	    box = new int[N][M];
-	    
-	    for(int i = 0; i < N; i++) {
-	    	st = new StringTokenizer(br.readLine());
-	    	
-	    	for(int j = 0 ; j < M; j++) {
-	    		box[i][j] = Integer.parseInt(st.nextToken());
-	    		
-	    		if(box[i][j] == 1) {
-	    			q.offer(new toma(i,j,0));
-	    		}
-	    	}
-	    }
-	    
-	    bfs();
-	    
-	    for(int i = 0 ; i < N; i++) {
-	    	for(int j = 0 ; j < M; j++) {
-	    		if(box[i][j] == 0) 
-	    			day = -1;
-	    	}
-	    }
-	    
-	    if(day != -1) {
-	    	System.out.println(day - 1);
-	    }else {
-	    	System.out.println(day);
-	    }
-	}
-	
-	public static void bfs() {
-		int[] dx = {1, -1 , 0, 0};
-		int[] dy = {0, 0, 1 , - 1};
+	public static void main(String[] args) throws Exception {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st;
 		
-		while(!q.isEmpty()) {
-			toma tomas = q.poll();
-			int days = tomas.day + 1;
+		N = Integer.parseInt(br.readLine());
+		
+		tree = new int[26][2];
+		
+		for(int i = 0 ; i < N; i++) {
+			st = new StringTokenizer(br.readLine());
 			
-			for(int i = 0 ; i < 4; i++) {
-				int nextX = tomas.x + dx[i];
-				int nextY = tomas.y + dy[i];
-				if(nextX >= 0 && nextY >= 0 && nextX < N && nextY < M) {
-					day = days;
-					if(box[nextX][nextY] == 0) {
-						q.offer(new toma(nextX, nextY, days));
-						box[nextX][nextY] = 1;	
-					}
-				}
-				
-			}
+			int parent = st.nextToken().charAt(0) - 'A';
+			int childX = st.nextToken().charAt(0) - 'A';
+			int childY = st.nextToken().charAt(0) - 'A';
+			
+			tree[parent][0] = (childX == -19) ? -1 : childX;
+			tree[parent][1] = (childY == -19) ? -1 : childY;
 		}
+		
+		solution();
+		
 	}
-}
+	static void preOrder(int x) {
+		if(x == -1) return;
+		
+		sb.append((char)(x + 'A'));
+		
+		preOrder(tree[x][0]);
+		
+		preOrder(tree[x][1]);
+	}
 }
