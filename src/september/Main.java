@@ -14,39 +14,52 @@ import java.util.StringTokenizer;
 
 
 public class Main {
-	static int N;
-	static int[][] tree;
-	static StringBuilder sb = new StringBuilder();
-	
+	static int[] parent;
+	static boolean[] visited;
+	static ArrayList<Integer>[] list;
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringBuilder sb = new StringBuilder();
+		int N = Integer.parseInt(br.readLine());
 		StringTokenizer st;
+		visited = new boolean[N + 1];
+		parent = new int[N + 1];
+		list = new ArrayList[N + 1];
 		
-		N = Integer.parseInt(br.readLine());
-		
-		tree = new int[26][2];
-		
-		for(int i = 0 ; i < N; i++) {
-			st = new StringTokenizer(br.readLine());
-			
-			int parent = st.nextToken().charAt(0) - 'A';
-			int childX = st.nextToken().charAt(0) - 'A';
-			int childY = st.nextToken().charAt(0) - 'A';
-			
-			tree[parent][0] = (childX == -19) ? -1 : childX;
-			tree[parent][1] = (childY == -19) ? -1 : childY;
+		for(int i = 0 ; i < N +1; i ++) {
+			list[i] = new ArrayList<Integer>();
 		}
 		
-		solution();
+		for(int i = 0 ; i < N -1; i++) {
+			st = new StringTokenizer(br.readLine());
+			
+			int a = Integer.parseInt(st.nextToken());
+			int b = Integer.parseInt(st.nextToken());
+			
+			list[a].add(b);
+			list[b].add(a);
+		}
 		
+		dfs(1);
+		
+		for(int i =2 ; i < parent.length; i++) {
+			sb.append(parent[i]).append("\n");
+		}
+		System.out.println(sb);
 	}
-	static void preOrder(int x) {
-		if(x == -1) return;
 		
-		sb.append((char)(x + 'A'));
+
+	static void dfs(int info) {
+		visited[info] = true;
+		ArrayList<Integer> nei = list[info];
 		
-		preOrder(tree[x][0]);
-		
-		preOrder(tree[x][1]);
+		for(int neiInfo : nei) {
+			if(!visited[neiInfo]) {
+				parent[neiInfo] = info;
+				dfs(neiInfo);
+			}
+		}
 	}
-}
+	}
+
+
