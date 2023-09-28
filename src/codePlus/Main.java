@@ -30,7 +30,7 @@ public class Main {
 				}else if(ch == '('){
 					stk.push(ch);
 				}else {
-					while(!stk.isEmpty() && precedence(stk.peek()) > precedence(ch)) {
+					while(!stk.isEmpty() && precedence(stk.peek()) >= precedence(ch)) {
 						ans += stk.pop();
 					}
 					stk.push(ch);
