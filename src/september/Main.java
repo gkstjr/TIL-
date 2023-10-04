@@ -49,6 +49,7 @@ public class Main {
 	}
 		
 
+	
 	static void dfs(int info) {
 		visited[info] = true;
 		ArrayList<Integer> nei = list[info];
