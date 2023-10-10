@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Stack;
 
-	
+// 알고리즘 보류
 public class Main {
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		
