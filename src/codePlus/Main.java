@@ -8,6 +8,8 @@ import java.util.Stack;
 /* 
 	dp[n] = 정수 n 을 1, 2 , 3 의 합으로 나타내는 방법의 수 
 	점화식 -> dp[n] = dp[n - 1] + dp[n - 2] + dp[n - 3];
+	
+	
 */
 public class Main {
 	static Integer[] dp;
