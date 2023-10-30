@@ -15,24 +15,33 @@ import java.util.StringTokenizer;
 	
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringTokenizer st = new StringTokenizer(br.readLine());
+		StringTokenizer st;
 		
-		int n = Integer.parseInt(st.nextToken());
-		int k = Integer.parseInt(st.nextToken());
+		int n = Integer.parseInt(br.readLine());
 		
-		long[][] dp = new long[k + 1][n + 1];
-		dp[0][0] = 1;
+		int[][] dp = new int[n + 1][n + 1];
+		int[][] seq = new int[n + 1][n + 1];
 		
-		for(int i = 1; i <= k; i++) {
-			for(int j = 1; j <= n; j++) {
-				for(int l = 0; l <= j; l++ ) {
-					dp[i][j] += dp[i - 1][j - l];
-				}
-				dp[i][j] %= 1000000000; 
+		
+		for(int i = 1; i <= n; i++) {
+			st = new StringTokenizer(br.readLine());	
+			for(int j = 1; j <=i; j++) {
+				seq[i][j] = Integer.parseInt(st.nextToken());
 			}
 		}
 		
-		System.out.println(dp[k][n] % 1000000000);
+		for(int i = 1; i <= n; i++) {
+			for(int j = 1; j <= i; j++) {
+				dp[i][j] = Math.max(dp[i - 1][j], dp[i - 1][j - 1]) + seq[i][j];
+			}
+		}
+		
+		int answer = 0 ;
+		for(int i = 1; i <= n; i++) {
+			answer = Math.max(answer,dp[n][i]);
+		}
+		
+		System.out.println(answer);
 	}
 
 }
