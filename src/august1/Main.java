@@ -11,30 +11,55 @@ import java.util.StringTokenizer;
 import java.util.prefs.BackingStoreException;
 /*
 
- *  
+ *  'A' = 65
  * */
 class Main {
     public static void main(String args[]) throws Exception {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        
-       StringTokenizer st = new StringTokenizer(br.readLine());
-       StringBuilder sb = new StringBuilder();
-       long a = Long.parseLong(st.nextToken());
-       long b = Long.parseLong(st.nextToken());
-       
-       long num = (gcd(Math.max(a, b),Math.min(a, b)));
-       
-       
-       for(int i = 0 ; i < num; i++) {
-    	   sb.append("1");
-       }
-       System.out.println(sb);
-     }
-    
-    static long gcd(long a , long b) {
-    	if(b == 0) return a;
+     
+    	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     	
-    	return gcd(b,a % b);
-    }
+    	StringTokenizer st;
+    	// 진법 정보
+    	st = new StringTokenizer(br.readLine());
+    	
+    	int A = Integer.parseInt(st.nextToken());
+    	int B = Integer.parseInt(st.nextToken());
+    	
+    	//A진법으로 나타낸 수의 자리수
+    	int m = Integer.parseInt(br.readLine());
+    	
+    	//A진법으로 자릿수
+    	
+    	st = new StringTokenizer(br.readLine());
+    	long[] arr = new long[m];
+    	
+    	int square = 1;
+    	long sum = 0;
+    	for(int i = 0 ; i < m; i++) {
+    		arr[i] = Long.parseLong(st.nextToken());  		
+    	}
+    	for(int i = arr.length - 1; i >= 0; i--) {
+    		sum += arr[i] * square;
+    		square *= A;
+    	}
+    	
+    	Stack<Long> stk = new Stack<Long>();
+    	
+    	while(sum != 0) {
+    		stk.push(sum % B);
+    		
+    		sum /= B;
+    	}
     
+    	
+    	while(!stk.isEmpty()) {
+    		if(stk.size() == 1) {
+    			System.out.print(stk.peek());
+    		}else {
+    			System.out.print(stk.peek() + " ");
+    		}
+    		
+    		stk.pop();
+    	}
+    }
 }
