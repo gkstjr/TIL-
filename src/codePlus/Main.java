@@ -57,6 +57,7 @@ public class Main {
 				if(bom[i][j].equals(bom[i][j - 1])) {
 					cnt += 1;
 				}
+				
 			}
 			if(ans < cnt) ans = cnt;
 			cnt = 1;
