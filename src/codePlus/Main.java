@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-// 인프런 rest API 강의 완료 - > 간단하게 머리 식히기용으로 듣기 좋았음 코드플러스 2/2 문제 내일 부터 시(잠시 중단) -> 네트워크 면접 스터디 2주차 준비
+//네트워크 면접 스터디 2주차 준비 (https , UDP , DNS) 블로그 정리 후 면접 답변 스터디
 public class Main {
 	static int n;
 	static String[][] bom;
