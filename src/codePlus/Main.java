@@ -6,72 +6,42 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.StringTokenizer;
 
-//네트워크 면접 스터디 2주차 준비 (https , UDP , DNS) 블로그 정리 후 면접 답변 스터디
-public class Main {
-	static int n;
-	static String[][] bom;
-	public static void main(String[] args) throws NumberFormatException, IOException {
-	
+//재귀 함수로 풀기 매개변수 (index ,start, n , m) 여기서 start는 전 함수의 1~n까지으 수 중 선택된 수 + 1
+public class Main { 
+	static int n , m;
+	static int[] ans = new int[8];
+	static StringBuilder sb = new StringBuilder();
+	public static void main(String[] args) throws Exception{
+		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(br.readLine());
 		
-		n = Integer.parseInt(br.readLine());
+		n = Integer.parseInt(st.nextToken());
+		m = Integer.parseInt(st.nextToken());
 		
-		bom = new String[51][51];
-		int ans = 0;
-		for(int i = 0; i < n; i++) {
-			String str = br.readLine();
-				bom[i] = str.split("");
-		}
-		for(int i = 0 ; i < n; i++) {
-			for(int j = 0 ; j < n; j++) {
-				if(i + 1 < n) {
-					if(!bom[i][j].equals(bom[i + 1][j])) {
-						String tmp = bom[i][j];bom[i][j] = bom[i + 1][j];bom[i + 1][j] = tmp;
-						int temp = check(bom);
-						if(ans < temp) ans = temp;
-						String tmp2 = bom[i][j];bom[i][j] = bom[i + 1][j];bom[i + 1][j] = tmp2;
-					} 
-				}
-				if(j + 1 < n) {
-					if(!bom[i][j].equals(bom[i][j + 1])) {
-						String tmp = bom[i][j];bom[i][j] = bom[i][j + 1];bom[i][j + 1] = tmp;
-						int temp = check(bom);
-						if(ans < temp) ans = temp;
-						String tmp2 = bom[i][j];bom[i][j] = bom[i][j + 1];bom[i][j + 1] = tmp2;
-					} 
-				}
-					
-			}
-		}
-		System.out.println(ans);
+		recur(0 , 1 , n , m);
+		System.out.println(sb);
+		
 	}
 	
-	static int check(String[][] str) {
-		
-		int ans  = 0;
-		for(int i = 0 ; i < n; i++) {
-			
-			int cnt = 1;
-			//행비교
-			for(int j = 1 ; j < n; j++) {
-				if(bom[i][j].equals(bom[i][j - 1])) {
-					cnt += 1;
-				}
-				
+	static void recur(int index , int start , int n , int m) {
+		//재귀 함수의 끝 조건
+		if(index == m) {
+			for(int i = 0; i < m; i++) {
+				sb.append(ans[i]).append(" ");
 			}
-			if(ans < cnt) ans = cnt;
-			cnt = 1;
-			//열비교
-			for(int j = 1; j < n; j++) {
-				if(bom[j][i].equals(bom[j - 1][i])) {
-					cnt += 1;
-				}
-			}
-			if(ans < cnt) ans = cnt;
+			sb.append("\n");
+			return;
 		}
 		
-		return ans;
+		//재귀함수 로직
+		for(int i = start ; i <= n; i++) {
+			ans[index] = i;
+			start = i;
+			recur(index + 1 , start , n , m);
+		}
 	}
-
+	
 }
