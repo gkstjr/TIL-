@@ -5,7 +5,7 @@ import java.io.*;
 import java.nio.Buffer;
 
 
-public class Main { 
+public class graph_1707 { 
 	static ArrayList<Integer>[] list;
 	static int[] check; 
 	static int V;
@@ -62,7 +62,6 @@ public class Main {
 	}
 	static void dfs(int node ,int c) {
 		check[node] = c;
-		
 		
 		for(int i : list[node]) {
 			if(check[i] == 0) {
