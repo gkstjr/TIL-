@@ -4,7 +4,6 @@ import java.util.*;
 import java.io.*;
 import java.nio.Buffer;
 
-
 public class Main { 
 	static ArrayList<Integer>[] list;
 	static int[] parent;
