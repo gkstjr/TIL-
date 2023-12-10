@@ -4,7 +4,7 @@ import java.util.*;
 import java.io.*;
 import java.nio.Buffer;
 
-// 백준 기초 완강 (객사오 읽고 프로그래머스 천천히)
+// 백준 기초 완강 (객사오 읽고 프로그래머스 천천히) 
 public class Main { 
 	static ArrayList<Integer>[] list;
 	static int[] parent;
