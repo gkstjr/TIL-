@@ -4,7 +4,7 @@ import java.util.*;
 import java.io.*;
 import java.nio.Buffer;
 
-// 백준 기초 완강 (객사오 읽고 프로그래머스 천천히) 
+// 백준 기초 완강 (객사오 읽고 프로그래머스 천천히) 깃허브 잔디 관리 고민해볼 것
 public class Main { 
 	static ArrayList<Integer>[] list;
 	static int[] parent;
