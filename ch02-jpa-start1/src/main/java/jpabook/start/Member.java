@@ -1,6 +1,8 @@
 package jpabook.start;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.*;
 
@@ -18,6 +20,10 @@ public class Member {
 	private String city;
 	private String strret;
 	private String zipcode;
+	
+	@OneToMany(mappedBy = "member")
+	private List<Order> orders = new ArrayList<Order>();
+	
 	public Long getId() {
 		return id;
 	}
@@ -48,5 +54,11 @@ public class Member {
 	public void setZipcode(String zipcode) {
 		this.zipcode = zipcode;
 	}
-	
+	public List<Order> getOrders() {
+		return orders;
+	}
+	public void setOrders(List<Order> orders) {
+		this.orders = orders;
+	}
+	 
 }
