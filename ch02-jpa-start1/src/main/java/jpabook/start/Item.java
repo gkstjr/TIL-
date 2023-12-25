@@ -1,5 +1,8 @@
 package jpabook.start;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.*;
 
 @Entity
@@ -8,6 +11,7 @@ public class Item {
 	@Id @GeneratedValue
 	@Column(name = "ITEM_ID")
 	private Long id;
+	
 	
 	private String name;
 	private int price;
