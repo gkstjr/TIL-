@@ -6,8 +6,10 @@ import java.util.List;
 
 import javax.persistence.*;
 
+import jpabook.model.entity.item.BaseEntity;
+
 @Entity
-public class Member {
+public class Member extends BaseEntity {
 	
 	@Id
 	@GeneratedValue

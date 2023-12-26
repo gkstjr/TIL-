@@ -18,9 +18,11 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import jpabook.model.entity.item.BaseEntity;
+
 @Entity
 @Table(name = "ORDERS")
-public class Order {
+public class Order extends BaseEntity {
 	
 	@Id @GeneratedValue
 	@Column(name =  "ORDER_ID")
