@@ -8,6 +8,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import jpabook.model.entity.item.Item;
+
 @Entity
 @Table(name = "ORDER_ITEM")
 public class OrderItem {
