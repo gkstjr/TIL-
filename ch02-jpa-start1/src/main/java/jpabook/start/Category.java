@@ -5,6 +5,8 @@ import java.util.List;
 
 import javax.persistence.*;
 
+import jpabook.model.entity.item.Item;
+
 @Entity
 public class Category {
 	
