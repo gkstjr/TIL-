@@ -37,19 +37,7 @@ public class JpaMain {
 
     	String id = "id1";
     	Member member = new Member();
-    	member.setId(id);
-    	member.setUsername("한석");
-    	member.setAge(28);
     	
-    	//등록
-    	em.persist(member);
-    	
-    	//수정
-    	member.setAge(29);
-    	
-    	//한건 조회
-    	Member findMember = em.find(Member.class, id);
-    	System.out.println("findMember= " + findMember.getUsername() + ", age = " + findMember.getAge());
     	
     	//목록 조회
     	List<Member> members = 

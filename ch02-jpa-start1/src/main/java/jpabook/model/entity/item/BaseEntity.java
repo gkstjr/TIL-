@@ -8,6 +8,7 @@ import javax.persistence.MappedSuperclass;
 @MappedSuperclass
 public class BaseEntity {
 	
+	
 	private Date createdDate;
 	private Date lastModifiedDate;
 	public Date getCreatedDate() {
@@ -21,7 +22,5 @@ public class BaseEntity {
 	}
 	public void setLastModifiedDate(Date lastModifiedDate) {
 		this.lastModifiedDate = lastModifiedDate;
-	}
-	
-	
+	}		
 }
