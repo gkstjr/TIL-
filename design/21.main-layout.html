@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel ="stylesheet" type ="text/css" href ="./css/commons.css">
+    <link rel ="stylesheet" type ="text/css" href ="./css/test.css">
+    <style>
+        .main{
+            width: 1000px;
+            margin: auto;
+            }
+        .header{
+            min-height: 120px;
+            padding: 20px;
+        }
+        .section{
+            min-height: 450px;
+        }
+        .footer{
+            min-width: 120px;
+            padding: 20px;
+        }
+        .section::after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .side{
+            float: left;
+            width: 20%;
+            min-height: 450px;
+        }
+        .article{
+            float: left;
+            width: 80%;
+            min-height: 450px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class ="main">
+        <div class ="header">
+            <h1>KH정보교육원 JSP 수업용 홈페이지</h1>
+        </div>
+
+        <div class ="nav">메뉴</div>
+        
+        <div class ="section">
+            <div class ="side">사이드</div>
+            <div class ="article">내용</div>
+        </div>
+        
+        <div class ="footer">푸터</div>
+    </div>
+</body>
+</html>

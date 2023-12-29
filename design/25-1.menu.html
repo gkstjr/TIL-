@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel ="stylesheet" type ="text/css" href="./css/commons.css">
+    <!-- <link rel ="stylesheet" type ="text/css" href="./css/test.css"> -->
+    <style>
+        ul.menu,
+        ul.menu ul {
+            list-style: none;
+           
+            
+            padding: 0;
+            margin: 0;
+        }
+        ul.menu::after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        ul.menu >li {
+            width : 100px;
+            float: left;
+
+        }
+        ul.menu ul{
+            display: none;
+        }
+        ul.menu  li:hover >ul{
+            display: block;
+        }
+        ul.menu li{
+            position: relative;
+        }
+        ul.menu ul{
+            position: absolute;
+            top: 100%;
+            left:0%;
+        }
+        ul.menu ul {
+            width: 100%;
+        }
+        ul.menu{
+            font-size: 16px;
+        }
+        ul.menu, ul.menu ul {
+            background-color: black;
+        }
+        ul.menu li {
+                padding: 0.5em;
+                text-align: center;
+        }
+        ul.menu a {
+            text-decoration: none;
+            color: white;
+        }
+        ul.menu li:hover{
+            background-color: gray;
+        }
+        ul.menu a {
+            display: block;
+            width: 100%;
+        }
+        ul.menu > li.right-menu{
+            float: right;
+        }
+        ul.menu > li > ul ul {
+            top:0%;
+            left: 100%;
+
+        } 
+        ul.menu >li.right-menu >ul ul {
+            
+            left: -100%;
+            
+        }
+        ul.menu a {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+    </style>
+</head>
+<body>
+    <!-- 계층형 구조는 ul,ol로 구현한다-->
+    <ul class ="menu">
+        <li>
+            <a href ="#">메뉴메뉴메뉴메뉴메뉴메뉴메뉴</a>
+            <ul>
+                <li><a href = "#">항목</a></li>
+                <li><a href = "#">항목</a></li>
+                <li><a href = "#">항목</a></li>
+                <li><a href = "#">
+                    항목
+                <ul>
+                    <li><a href = "#">항목</a></li>
+                    <li><a href = "#">항목</a></li>
+                    <li><a href = "#">항목</a></li>
+                    <li><a href = "#">항목</a></li>
+                </ul>
+                </a></li>
+            </ul>
+            </li>
+        <li>
+            <a href ="#">메뉴</a>
+            <ul>
+                <li><a href = "#">항목</a></li>
+                <li><a href = "#">항목</a></li>
+                <li><a href = "#">항목</a></li>
+                <li><a href = "#">항목</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href ="#">메뉴</a>
+            <ul>
+                <li><a href = "#">항목</a></li>
+                <li><a href = "#">항목</a></li>
+                <li><a href = "#">항목</a></li>
+                <li><a href = "#">항목</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href ="#">메뉴</a>
+            <ul>
+                <li><a href = "#">항목</a></li>
+                <li><a href = "#">항목</a></li>
+                <li><a href = "#">항목</a></li>
+                <li><a href = "#">항목</a></li>
+            </ul>
+        </li>
+        <li class ="right-menu">
+            <a href ="#">메뉴</a>
+            <ul>
+                <li><a href = "#">항목</a></li>
+                <li><a href = "#">항목</a></li>
+                <li><a href = "#">항목</a></li>
+                <li><a href = "#">항목</a></li>
+            </ul>
+        </li>
+
+        <li class ="right-menu">
+            <a href ="#">메뉴</a>
+            <ul>
+                <li><a href = "#">항목</a></li>
+                <li><a href = "#">항목</a></li>
+                <li><a href = "#">항목</a></li>
+                <li><a href = "#">
+                    항목
+                    <ul>
+                        <li><a href = "#">항목</a></li>
+                        <li><a href = "#">항목</a></li>
+                        <li><a href = "#">항목</a></li>
+                        <li><a href = "#">항목</a></li>
+                    </ul>
+                </a></li>
+            </ul>
+        </li>
+    </ul>
+</body>
+</html>
