@@ -1,20 +1,18 @@
-import java.util.*;
-
 class Solution {
-    public int solution(String t, String p) {
+    public int solution(int[][] sizes) {
         int answer = 0;
-        String[] arr = t.split("");
+        int maxW = Integer.MIN_VALUE;
+        int maxH = Integer.MIN_VALUE;
         
-        for(int i = 0; i < arr.length; i++) {
-            if(i + p.length() > arr.length) break;
-            
-            String str = "";
-            for(int j = i; j < i + p.length(); j++) {
-                str += arr[j];                 
-            }
-            //System.out.println(str);
-            if(Long.valueOf(str) <= Long.valueOf(p)) answer++;
+        for(int i = 0; i < sizes.length; i++) {
+            int w = Math.max(sizes[i][0] , sizes[i][1]);
+            int h = Math.min(sizes[i][0] , sizes[i][1]);
+                       
+            maxW = (w > maxW) ? w : maxW;
+            maxH = (h > maxH) ? h : maxH;
         }
-        return answer;
+        
+        
+        return maxW * maxH;
     }
 }
