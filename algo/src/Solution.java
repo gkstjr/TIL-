@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.*;
 
 class Solution {
@@ -10,15 +9,24 @@ class Solution {
 //	    	System.out.println(sol.solution("rermgorpsam", num2));
 	}
 
-	public int solution(String my_string, String is_suffix) {
-		String[] answer = new String[my_string.length()];
-		int cnt = 0;
-		for (int i = 0; i < my_string.length(); i++) {
-			answer[i] = my_string.substring(i, my_string.length());
-			if (answer[i].equals(is_suffix)) {
-				cnt = 1;
-			}
-		}
-		return cnt;
-	}
+	  public List<Integer> solution(int []arr) {
+		  ArrayList<Integer> answer = new ArrayList<Integer>();
+		  
+		  Queue<Integer> que = new LinkedList<Integer>();
+	                         
+	        for(int i = 0; i < arr.length; i++) {
+	        	if(que.peek() != arr[i]) {
+	        		que.offer(arr[i]);                       
+	        	}
+	        }
+	        
+	        while(!que.isEmpty()) {
+	        	answer.add(que.poll());
+	        }
+	        
+	        // [실행] 버튼을 누르면 출력 값을 볼 수 있습니다.
+	        System.out.println("Hello Java");
+	        
+	        return answer;
+	    }
 }
