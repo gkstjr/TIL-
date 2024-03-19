@@ -9,23 +9,25 @@ class Solution {
 //	    	System.out.println(sol.solution("rermgorpsam", num2));
 	}
 
-	  public List<Integer> solution(int []arr) {
-		  ArrayList<Integer> answer = new ArrayList<Integer>();
-		  
-		  Queue<Integer> que = new LinkedList<Integer>();
-	                         
-	        for(int i = 0; i < arr.length; i++) {
-	        	if(que.peek() != arr[i]) {
-	        		que.offer(arr[i]);                       
-	        	}
-	        }
+	 public String solution(String s) {
+	        String answer = "";
+	        String[] str = s.split("");
+	        int cnt = 0;
 	        
-	        while(!que.isEmpty()) {
-	        	answer.add(que.poll());
+	        for(int i = 0 ; i < str.length; i++) {
+	            if(str[i].isEmpty()) {
+	                cnt = 0;
+	                answer += " ";
+	                continue;
+	            }    
+	            
+	            if(cnt % 2 == 0) {
+	                answer += str[i].toUpperCase();
+	            }else {
+	                answer += str[i].toLowerCase();
+	            }
+	            cnt++;
 	        }
-	        
-	        // [실행] 버튼을 누르면 출력 값을 볼 수 있습니다.
-	        System.out.println("Hello Java");
 	        
 	        return answer;
 	    }
