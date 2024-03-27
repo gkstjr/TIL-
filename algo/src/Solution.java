@@ -1,27 +1,17 @@
 class Solution {
-	class Solution {
-	    public int[] solution(String s) {
-	        int[] answerArr = new int[123];
-	        
-	        for(int i = 0; i < answerArr.length; i++) {
-	            answerArr[i] = -1;
-	        } 
-	        
-	        char[] arr = s.toCharArray();
-	        int[] answer = new int[arr.length];
-	        
-	       for(int i = 0; i < arr.length; i++) {
-	            if(answerArr[arr[i]] == -1) {
-	                answer[i] = -1;
-	                answerArr[arr[i]] = i;
-	            }else {
-	                answer[i] = i - answerArr[arr[i]] ;
-	                answerArr[arr[i]] = i;
-
-	            }
-	       }
-	        
-	        return answer;
-	    }
-	}
+    public List<Integer> solution(int[] numbers) {
+        List<Integer> answer = new ArrayList<Integer>();
+        
+        for(int i = 0 ; i < numbers.length; i++) {
+            for(int j = i + 1; j < numbers.length; j++) {
+                int sum = numbers[i] + numbers[j];
+                if(!answer.contains(sum)) {
+                    answer.add(sum);
+                }
+            }
+        }
+        
+        Collections.sort(answer);
+        return answer;
+    }
 }
