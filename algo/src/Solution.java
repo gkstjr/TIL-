@@ -1,17 +1,25 @@
 class Solution {
-    public List<Integer> solution(int[] numbers) {
-        List<Integer> answer = new ArrayList<Integer>();
+    public String solution(int[] food) {
+        String answer = "";
         
-        for(int i = 0 ; i < numbers.length; i++) {
-            for(int j = i + 1; j < numbers.length; j++) {
-                int sum = numbers[i] + numbers[j];
-                if(!answer.contains(sum)) {
-                    answer.add(sum);
-                }
+        //왼쪽 출발
+        for(int i = 1; i < food.length; i++) {
+            int cnt = food[i] / 2;
+            for(int j = 0; j < cnt; j++) {
+                answer += String.valueOf(i);
             }
         }
         
-        Collections.sort(answer);
+        answer += "0";
+        
+        //오른쪽 출발
+        for(int i = food.length - 1; i > 0; i--) {
+            int cnt = food[i] / 2;
+            for(int j = 0; j <cnt; j++) {
+                answer += String.valueOf(i);
+            }
+        }
+       // System.out.println(answer);
         return answer;
     }
 }
