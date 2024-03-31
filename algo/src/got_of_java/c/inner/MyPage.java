@@ -28,4 +28,5 @@ public class MyPage {
 		input.listenerCalled(input.KEY_UP);
 		input.listenerCalled(input.KEY_DOWN);
 	}
+	
 }
