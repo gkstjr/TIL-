@@ -5,7 +5,5 @@ public class FileSizeSummary {
 		FileSizeSummary sample = new FileSizeSummary();
 		String path = "C:\\godofjava";
 	}
-	
-	
 
 }
