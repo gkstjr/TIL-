@@ -21,5 +21,6 @@ public class TimerThread extends Thread {
 		Date date = new Date();
 		
 		System.out.println(date + " " + System.currentTimeMillis());
+		
 	}
 }
