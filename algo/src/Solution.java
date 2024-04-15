@@ -1,18 +1,18 @@
 class Solution {
-    public String solution(int[] food) {
-        String answer = "";
-        StringBuilder sb = new StringBuilder();
-        
-        //왼쪽 출발
-        for(int i = 1; i < food.length; i++) {
-            int cnt = food[i] / 2;
-            for(int j = 0; j < cnt; j++) {
-                sb.append(String.valueOf(i));
-            }
-        }
-                
-        answer = sb.toString() + "0" + sb.reverse().toString();
-        
-        return answer;
-    }
+	  public int solution(int[] num_list) {
+	        int answer = 0;
+	        String even = ""; // 짝수
+	        String odd = ""; //홀수
+	        
+	        for(int i = 0; i < num_list.length; i++) {
+	        	if(num_list[i] % 2 == 0) {
+	        		//짝수 
+	        		even += String.valueOf(num_list[i]);
+	        	}else odd += String.valueOf(num_list[i]);
+	        }
+	        
+	        answer = Integer.parseInt(even) + Integer.parseInt(odd);
+	        
+	        return answer;
+	    }
 }
