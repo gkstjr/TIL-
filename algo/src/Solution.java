@@ -1,18 +1,12 @@
+import java.util.ArrayList;
+
 class Solution {
-	  public int solution(int[] num_list) {
-	        int answer = 0;
-	        String even = ""; // 짝수
-	        String odd = ""; //홀수
-	        
-	        for(int i = 0; i < num_list.length; i++) {
-	        	if(num_list[i] % 2 == 0) {
-	        		//짝수 
-	        		even += String.valueOf(num_list[i]);
-	        	}else odd += String.valueOf(num_list[i]);
-	        }
-	        
-	        answer = Integer.parseInt(even) + Integer.parseInt(odd);
-	        
-	        return answer;
-	    }
+	public int[] solution(int start, int end) {
+		ArrayList<Integer> answer = new ArrayList<Integer>();
+		
+		for(int i = start; i <= end; i++) {
+			answer.add(i);
+		}
+		return answer.stream().mapToInt(i -> i).toArray();
+    }
 }
