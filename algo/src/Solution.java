@@ -1,23 +1,15 @@
 import java.util.ArrayList;
 
 class Solution {
-	public int[] solution(int[] arr, int[][] queries) {
-        int[] answer = new int[queries.length];
-        
-        for(int i = 0 ; i < queries.length; i++) {
-        	int s = queries[i][0];
-        	int e = queries[i][1];
-        	int k = queries[i][2];
-        	int min = Integer.MAX_VALUE;
-        	for(int j = s; j <= e; j++) {
-        		if((min > arr[j]) && arr[j] > k) {
-        			min = arr[j];
-        		}
-        	}
-        	if(min > 2000000) min = -1;
-        	answer[i] = min;
-        	System.out.println(min);
-        }
-        return answer;
-    }
+	 public int solution(int a, int d, boolean[] included) {
+	        int answer = 0;
+	        int num = a;
+	        for(int i = 0; i < included.length; i++) {
+	        	 if(i==0) num = a;
+	        	 else num += d;
+	        	 
+	        	 if(included[i] == true) answer += num;
+	        }
+	        return answer;
+	    }
 }
