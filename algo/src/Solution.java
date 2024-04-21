@@ -1,15 +1,17 @@
 import java.util.ArrayList;
 
 class Solution {
-	 public int solution(int a, int d, boolean[] included) {
-	        int answer = 0;
-	        int num = a;
-	        for(int i = 0; i < included.length; i++) {
-	        	 if(i==0) num = a;
-	        	 else num += d;
-	        	 
-	        	 if(included[i] == true) answer += num;
-	        }
-	        return answer;
-	    }
+	public int[] solution(int[] num_list) {
+        int[] answer = new int[num_list.length+1];
+        for(int i = 0 ;i < num_list.length; i++) {
+        	answer[i] = num_list[i];
+        }
+        int leng = num_list.length;
+       if(answer[(leng-1)] > answer[(leng - 2)]) {
+    	   answer[leng] = answer[(leng-1)] - answer[(leng - 2)];
+       }else {
+    	   answer[leng] = answer[leng-1] * 2;
+       }
+        return answer;
+    }
 }
