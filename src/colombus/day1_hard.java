@@ -2,7 +2,7 @@ package colombus;
 
 import java.io.*;
 import java.util.StringTokenizer;
-public class Main {
+public class day1_hard {
 	
 		static int N;
 		static StringBuilder answer;
