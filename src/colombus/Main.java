@@ -1,43 +1,23 @@
 package colombus;
 
 import java.io.*;
-import java.util.StringTokenizer;
+import java.util.*;
 public class Main {
 	
-	public static void main(String[] args) throws IOException{
+	public static void main(String[] args) throws Exception{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(br.readLine());
 		
-		int N = Integer.valueOf(br.readLine());
-		int[] answer = new int[N + 1];
+		int A = Integer.valueOf(br.readLine());
+		int T = Integer.valueOf(br.readLine());
+		int B = Integer.valueOf(br.readLine()); 
+		String answer = (B == 0) ? "뻔" : "데기";
 		
-		for(int i = 0 ; i < N; i++ ) {
-			int num = i;
-			int sum = i;
-			while(num > 0) {
-				sum += num % 10;
-				num /= 10; 
-			}
+		
+		int index = 0;
+		while(true) {
 			
-			if(sum == N) {
-				answer[sum] = i;
-				break;
-			}
 		}
-		
-		/*
-		for(int i = 0 ; i < N; i++ ) {
-			int num = i;
-			int sum = i;
-			while(num > 0) {
-				sum += num % 10;
-				num /= 10; 
-			}
-		가장 작은 생성자를 구하느 건데 문제를 잘 파악하지 않아서 해당 코드로 하게 되면 더 큰 생성자가 있을 시 큰 생성자로 나오게 구현 되어 있음.	
-			if(sum > N) break;
-			answer[sum] = i;
-		}
-		*/
-		System.out.println(answer[N]);
 	}
-	
+		
 }
