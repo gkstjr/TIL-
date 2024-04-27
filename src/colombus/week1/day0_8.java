@@ -1,20 +1,19 @@
-package colombus;
+package colombus.week1;
 
 import java.io.*;
 import java.util.StringTokenizer;
-public class day0_9 {
+public class day0_8 {
 	
 	public static void main(String[] args) throws Exception{
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		int n = Integer.parseInt(br.readLine());
-		String[] str = br.readLine().split("");
+		String str;
 		StringBuilder sb = new StringBuilder();
-		int sum = 0;
-		for(int i = 0 ; i < str.length; i++) {
-			sum += Integer.valueOf(str[i]);
+		
+		while((str = br.readLine()) != null) {
+			sb.append(str + "\n");
 		}
 		
-		System.out.println(sum);
+		System.out.println(sb);
 	}
 }

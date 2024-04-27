@@ -1,4 +1,4 @@
-package colombus;
+package colombus.week1;
 
 import java.io.*;
 import java.util.StringTokenizer;

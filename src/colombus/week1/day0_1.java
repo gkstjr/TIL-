@@ -1,4 +1,4 @@
-package colombus;
+package colombus.week1;
 
 public class day0_1 {
 	public static void main(String[] args) {
