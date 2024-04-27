@@ -1,4 +1,4 @@
-package colombus.week1;
+package colombus.week1_bruteForce;
 
 import java.io.BufferedReader;
 import java.io.IOException;

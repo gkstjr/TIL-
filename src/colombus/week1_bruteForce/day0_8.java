@@ -1,23 +1,19 @@
-package colombus.week1;
+package colombus.week1_bruteForce;
 
 import java.io.*;
 import java.util.StringTokenizer;
-public class day0_5 {
+public class day0_8 {
 	
 	public static void main(String[] args) throws Exception{
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringTokenizer st;
+		String str;
 		StringBuilder sb = new StringBuilder();
 		
-		while((st = new StringTokenizer(br.readLine())).hasMoreElements()) {
-			
-			int A = Integer.parseInt(st.nextToken());
-			int B = Integer.parseInt(st.nextToken());
-			
-			sb.append(A + B + "\n");
+		while((str = br.readLine()) != null) {
+			sb.append(str + "\n");
 		}
-	
+		
 		System.out.println(sb);
 	}
 }

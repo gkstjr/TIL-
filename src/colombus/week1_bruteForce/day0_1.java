@@ -1,4 +1,4 @@
-package colombus.week1;
+package colombus.week1_bruteForce;
 
 public class day0_1 {
 	public static void main(String[] args) {

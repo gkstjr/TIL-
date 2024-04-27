@@ -1,26 +1,27 @@
-package colombus.week1;
+package colombus.week1_bruteForce;
 
 import java.io.*;
 import java.util.StringTokenizer;
-public class day0_4 {
+public class day0_7 {
 	
 	public static void main(String[] args) throws Exception{
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringTokenizer st = new StringTokenizer(br.readLine());
-		StringBuilder sb = new StringBuilder();
 		
-		int N = Integer.valueOf(st.nextToken());
+		StringTokenizer st;
+		StringBuilder sb = new StringBuilder();
+		int N = Integer.parseInt(br.readLine());
 		
 		for(int i = 0; i < N; i++) {
 			st = new StringTokenizer(br.readLine());
+			
 			int A = Integer.valueOf(st.nextToken());
-			int B = Integer.parseInt(st.nextToken());
+			int B = Integer.valueOf(st.nextToken());
 			
 			int sum = A + B;
-			sb.append(sum + "\n");
+			
+			sb.append("Case #" + (i + 1) + ": ").append(sum).append("\n");
 		}
-		
 		System.out.println(sb);
 	}
 }
