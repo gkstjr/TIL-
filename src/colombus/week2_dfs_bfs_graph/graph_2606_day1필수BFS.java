@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.*;
 
 //문제 설명 : 네트워크가 연결되어 있는 컴퓨터중에 한 개의 컾뮤터의 바이러스가 걸렸을 때 나머지 연결된 네트워크들도 바이러스가 걸린다고 할 때 바이러스 걸린 컴퓨터 개수 구하기
-//핵심 개념 : DFS , BFS 알고리즘 둘 다 사용해보기
+//핵심 개념 : DFS , BFS 알고리즘 둘 다 사용해보기 / 인접리스트 이용
 //예상 시간복잡도 : 
 //오답노트 -> 
 public class graph_2606_day1필수BFS {
