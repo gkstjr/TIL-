@@ -1,4 +1,4 @@
-package colombus.week1_bruteForce;
+package colombus.week2_dfs_bfs_graph;
 
 import java.io.BufferedReader;
 import java.io.IOException;
