@@ -15,6 +15,7 @@ public class graph_11725 {
 	static ArrayList[] node;  //list 배열(인접 리스트)
 	static StringBuilder sb = new StringBuilder();
 	static int[] ans ;
+	
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
