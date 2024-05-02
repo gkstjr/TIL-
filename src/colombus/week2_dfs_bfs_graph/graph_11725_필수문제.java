@@ -9,7 +9,7 @@ import java.util.*;
 //핵심 개념 : dfs / bfs 알고리즘 
 //예상 시간복잡도 :
 //오답노트 -> 
-public class graph_11725 {
+public class graph_11725_필수문제 {
 	static int N;
 	static boolean[] visited; //방문여부
 	static ArrayList[] node;  //list 배열(인접 리스트)

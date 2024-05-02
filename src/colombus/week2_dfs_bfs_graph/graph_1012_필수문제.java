@@ -9,7 +9,7 @@ import java.util.*;
 //핵심 개념 : dfs / bfs 알고리즘
 //예상 시간복잡도 : 
 //오답노트 -> 
-public class graph_1012 {
+public class graph_1012_필수문제 {
 	static int[][] arr;	 		// 배추밭 배열
 	static boolean[][] visited; //방문 여부
 	static int answer;			//배추 집단의 개수 (정답)

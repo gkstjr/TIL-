@@ -10,7 +10,7 @@ import java.util.*;
 //예상 시간복잡도 : 
 //오답노트 -> 정답을 저장하는 부분을 애를 먹었다. 처음에 ans배열을 따로 해서 풀어보려 했지만 원하는 값이 나오지 않았고 힌트를 받아 bfs함수에서 해당 배열로 넘어갈때마다 이전 미로의 값에 +1을 해줌으로써 몇번째 순서인 지 알 수 있었따.
 
-public class bfs_2178 {
+public class bfs_2178_필수문제 {
 	static int[][] miro;
 	static int N , M;
 	static boolean[][] visited;
