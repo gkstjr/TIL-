@@ -10,7 +10,7 @@ import java.util.*;
 //예상 시간복잡도 : 
 //오답노트 -> 
 public class graph_2606_day1필수DFS {
-	static ArrayList[] node; //인접리스트로 구현
+	static ArrayList[] node; //인접리스트로 구현 //ArrayList로 하게 됐을 때 더 빠른 시간복잡도를 낼 수 있다. 
 	static int answer = 0;  // dfs 함수를 통한 호출 개수
 	static boolean[] visited;// 해당 노드 방문여부 
 	

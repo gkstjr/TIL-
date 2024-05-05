@@ -54,7 +54,6 @@ public class graph_11725_필수문제 {
 			int nextN = neighbor.get(i);
 			if(!visited[nextN]) { //인접 노드가 아직 방문하지 않았을 때
 				dfs(nextN , n);
-
 			}
 		}
 	}

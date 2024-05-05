@@ -35,6 +35,7 @@ public class bfs_2178_필수문제 {
 		System.out.println(miro[N - 1][M - 1]);
 	}
 	
+	
 	public static void bfs(int row , int col) {
 		Queue<int[]> que = new LinkedList<int[]>();
 		int[] rowCol = {row , col}; //[0]이 row값 , [1] 이 col값
@@ -54,10 +55,8 @@ public class bfs_2178_필수문제 {
  						miro[nextRow][nextCol] = miro[queRow][queCol] + 1;
  					}
  				}
- 			}
- 			
+ 			}	
  		}
- 		
 	}
 }
 	
