@@ -46,7 +46,7 @@ public class graph_13023_추천문제 {
 	}
 	
 	static void dfs(int n , int depth) {
-		if(depth == 5) {
+		if(depth == N) {
 			ans = 1;
 			return;
 		}
