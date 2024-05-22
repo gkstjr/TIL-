@@ -1,12 +1,10 @@
 package programmers;
 
-import java.util.Scanner;
+import java.util.HashMap;
 
-public class Solution {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        String a = sc.next();
-        
-        System.out.println(a);
+class Solution {
+    public int[] solution(String[] name, int[] yearning, String[][] photo) {
+        int[] answer = {};
+        return answer;
     }
 }
