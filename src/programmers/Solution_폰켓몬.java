@@ -2,7 +2,7 @@ package programmers;
 
 import java.util.HashMap;
 import java.util.*;
-class Solution {
+class Solution_폰켓몬 {
     public int solution(int[] nums) {
         int answer = 0;
         HashSet<Integer> set = new HashSet();
