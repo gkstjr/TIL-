@@ -2,7 +2,7 @@ package programmers;
 
 import java.util.HashMap;
 import java.util.*;
-class Solution {
+class Solution_2016년 {
     public String solution(int a, int b) {
         String answer = "";
         int[] month = {0, 31 , 29 , 31 , 30 , 31 , 30 , 31 , 31 , 30 , 31 , 30 , 31};
