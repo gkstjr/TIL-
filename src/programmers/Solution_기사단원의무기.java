@@ -2,7 +2,7 @@ package programmers;
 
 import java.util.HashMap;
 import java.util.*;
-class Solution {
+class Solution_기사단원의무기 {
     public int solution(int number, int limit, int power) {
         int answer = 0;
         int cnt = 0 ; //약수의 개수
