@@ -2,7 +2,7 @@ package programmers;
 
 import java.util.HashMap;
 import java.util.*;
-class Solution {
+class Solution_모의고사 {
     public List<Integer> solution(int[] answers) {
         ArrayList<Integer> answer = new ArrayList<Integer>();
         int cnt1 = 0; int cnt2 = 0; int cnt3 = 0;
