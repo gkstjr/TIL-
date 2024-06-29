@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.*;
 class Solution {
     public List<Integer> solution(int[] answers) {
+    	
         ArrayList<Integer> answer = new ArrayList<Integer>();
         int cnt1 = 0; int cnt2 = 0; int cnt3 = 0;
         for(int i = 0 ; i < answers.length; i++) {
