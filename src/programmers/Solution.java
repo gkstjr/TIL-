@@ -1,6 +1,7 @@
 package programmers;
 
 import java.util.*;
+
 class Solution { //프로그래머스 재seting
     public int solution(int k, int m, int[] score) {
         int answer = 0;
@@ -12,4 +13,4 @@ class Solution { //프로그래머스 재seting
         
         return answer;
     }
-}
+} 
