@@ -2,7 +2,7 @@ package programmers;
 
 import java.util.*;
 
-class Solution_소수찾기 {
+class Solution_소수찾기 { // 
     public int solution(int n) {
         int answer = 0;
         
