@@ -2,7 +2,7 @@ package programmers;
 
 import java.util.*;
 
-class Solution { //프로그래머스 재seting
+class Solution { //코딩테스트 합격자 되기 자바 패키지 따로 파서 정리
     public int solution(int k, int m, int[] score) {
         int answer = 0;
         Arrays.sort(score);
