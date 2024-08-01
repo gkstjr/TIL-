@@ -1,4 +1,4 @@
-package programmers.book;
+package programmers.book.arrays;
 import java.util.*;
 /* 문제 분석
  *  

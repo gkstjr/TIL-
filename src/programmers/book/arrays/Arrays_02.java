@@ -1,4 +1,4 @@
-package programmers.book;
+package programmers.book.arrays;
 
 import java.util.Arrays;
 import java.util.Collections;

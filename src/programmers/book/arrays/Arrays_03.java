@@ -1,4 +1,4 @@
-package programmers.book;
+package programmers.book.arrays;
 import java.util.*;
 public class Arrays_03 {
 	public static void main(String[] args) {
