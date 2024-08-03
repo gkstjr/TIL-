@@ -13,7 +13,7 @@ public class stack_05 {
 		
 	}
 
-	  public int[] solution(int[] prices) {
+	    public int[] solution(int[] prices) {
 	        Stack<Integer> stk = new Stack<Integer>();
 
 	        int size = prices.length;
@@ -21,19 +21,14 @@ public class stack_05 {
 
 	        for(int i = 0 ; i < size; i++) {
 	            int number = prices[i];
-	            if(stk.isEmpty()) {
-	                stk.push(i);
-	                continue;
-	            }else if(prices[stk.peek()] > number) {
+	           if(!stk.isEmpty() && prices[stk.peek()] > number) {
 	                while(!stk.isEmpty() && prices[stk.peek()] > number) {
 	                    int pop = stk.pop();
 	                    answer[pop] = i - pop;
 	                }
-	                stk.push(i);
-
-	            }else {
-	                stk.push(i);
 	            }
+	            
+	            stk.push(i);    
 	        }
 	        
 	        while(!stk.isEmpty()) {
@@ -42,4 +37,5 @@ public class stack_05 {
 	        }
 	        return answer;
 	    }
-}
+	}
+
