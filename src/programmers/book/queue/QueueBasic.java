@@ -18,6 +18,15 @@ public class QueueBasic {
 		
 		System.out.println(queue.poll());
 		
+	
+		ArrayDeque<Integer> deque = new ArrayDeque<>();
+		
+		deque.addFirst(1);
+		deque.addFirst(2);
+		deque.addFirst(3);
+		System.out.println(deque.pollFirst());
+		System.out.println(deque.pollLast());
+		
 	}
 
 	public static int[] solution(int[] arr) {
