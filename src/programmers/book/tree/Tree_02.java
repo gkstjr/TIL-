@@ -2,43 +2,51 @@ package programmers.book.tree;
 import java.util.*;
 
 public class Tree_02 {
-	static HashMap<String , String> referralMap = new HashMap<>();
-	static HashMap<String , Integer> sellerAmount = new HashMap<String , Integer>();
-
-		public int[] solution(String[] enroll, String[] referral, String[] seller, int[] amount) {
-	            int[] answer = new int[enroll.length];	        
-		        
-		        for(int i = 0 ; i < referral.length; i++) {
-		            String ref = referral[i];
-		            referralMap.put(enroll[i] , ref);
-		        }
-		            
-		        for(int i = 0 ; i < seller.length; i++) {
-		            String sel = seller[i];
-		            int selAmount = amount[i];
-		            
-		            recur(sel , selAmount);
-		        }
+	  static ArrayList<Integer>[] nei;   
+	    static int answer = 0;
+	    public int solution(int[] info, int[][] edges) {
+	   
+	        nei = new ArrayList[info.length];
+	        
+	        for(int i = 0 ; i < info.length; i++) {
+	            nei[i] = new ArrayList<>();
+	        }
+	        
+	        for(int i = 0 ; i < edges.length; i++) {
+	            nei[edges[i][0]].add(edges[i][1]);
+	        }
+	        
+	        ArrayList<Integer> res = new ArrayList<>(); // 방문해야할 노드
+	        res.add(0);
 	            
-	            for(int i = 0; i < enroll.length; i++) {
-	                answer[i] = sellerAmount.get(enroll[i]);
+	        dfs(0 , 0 , 0 , info , res);
+	        return answer;
+	    }
+	    
+	    static void dfs(int node , int sheepCnt , int wolfCnt , int[] info , ArrayList<Integer> nextVisited) {
+	        if(info[node] == 0) { //양
+	            sheepCnt++;
+	        }else { //늑대
+	            wolfCnt++;            
+	        }
+	        
+	        if(wolfCnt >= sheepCnt) return;
+	        
+	        ArrayList<Integer> temp = new ArrayList<>();
+	        
+	        temp.addAll(nextVisited);
+	        temp.remove(Integer.valueOf(node));
+	        
+	        answer = Math.max(answer , sheepCnt);
+	        
+	        if(nei[node].size() != 0) {
+	            for(int a : nei[node]) {
+	                temp.add(a);
 	            }
-	            
-		        return answer;
-		    }
-		    
-		    public static void recur(String seller , int amount) {
-		        
-	            
-		        int totalMoney = amount * 100;
-		        int refMoney = totalMoney / 10;
-		        if(refMoney < 1) refMoney = 0;
-		        int mine = totalMoney - refMoney;
-	            if(!referralMap.containsKey(seller)) mine = totalMoney;
-	            
-		        sellerAmount.put(seller , sellerAmount.getOrDefault(seller , 0) + mine);
-	            if(referralMap.get(seller).equals("-")) return;
-	            
-		        recur(referralMap.get(seller) , refMoney);   
-		    }
+	        }
+	        
+	        for(int next : temp) {
+	            dfs(next , sheepCnt , wolfCnt , info , temp);
+	        }
+	    }
 }
