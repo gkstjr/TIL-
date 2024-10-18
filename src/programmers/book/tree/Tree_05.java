@@ -6,7 +6,7 @@ public class Tree_05 {
 	public static void main(String[] args) {
 		int[][] arr = {{0,0,1},{0,1,2},{1,1,2}};
 		int[][] arr2 = {{0,0,1},{1,1,2},{0,1,2},{1,0,2}};
-
+		char[] ch = args[0].toCharArray();
 		Boolean[] answer = solution(arr2 , 4);
 		for(int i = 0; i < answer.length; i++) {
 			System.out.println(answer[i]);
