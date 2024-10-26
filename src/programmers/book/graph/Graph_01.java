@@ -21,6 +21,7 @@ public class Graph_01 {
 			graph[edge[0]].add(new Node(edge[1],edge[2]));
 		}
 		
+		
 		PriorityQueue<Node> que = new PriorityQueue<Node>((o1,o2) -> Integer.compare(o1.cost, o2.cost));
 		
 		Arrays.fill(answer, Integer.MAX_VALUE);
