@@ -2,59 +2,44 @@ package programmers.book.graph;
 import java.util.*;
 
 public class Graph_06 {
-	   static int[][] dist;
-	    static int[] mx = {1 , 0 , -1 , 0};
-	    static int[] my = {0 , 1 , 0 , -1};
+	   static ArrayList<Integer>[] graph;
+	    static boolean[] visited;
+	    static int answer = Integer.MAX_VALUE;
+	    static int N;
 	    
-	    public int solution(int[][] board) {
-	        int answer = 0;
-	        int N = board.length;
-	        int M = board[0].length;
-	        dist = new int[N][M];
-	        for (int i = 0; i < N; i++) {
-	            Arrays.fill(dist[i], Integer.MAX_VALUE);
-	        }                
+	    public int solution(int n, int[][] wires) {
+	        graph = new ArrayList[n + 1];
+	        visited = new boolean[n + 1];
+	        N = n;
 	        
-	        ArrayDeque<Node> que = new ArrayDeque<Node>();
-	        dist[0][0] = 0;
-	        que.offer(new Node(0 , 0 , -1 , 0));
-	        
-	        while(!que.isEmpty()) {
-	            Node now = que.poll();
-	            
-	            for(int i = 0; i < 4; i++) {
-	                int nextX = mx[i] + now.x;
-	                int nextY = mx[i] + now.y;
-	                
-	                if(nextX < 0 || nextY < 0 || nextX >= N || nextY >= M) continue;
-	                
-	                int nextCost = calculateCost(now.direction , i);
-	                
-	                if(dist[nextX][nextY] < now.cost + nextCost) continue; 
-
-	                dist[nextX][nextY] = now.cost + nextCost;
-	                que.add(new Node(nextX , nextY, i , dist[nextX][nextY]));
-	                System.out.println()
-	            }
+	        for(int i = 1; i < n + 1; i++) {
+	            graph[i] = new ArrayList<Integer>();
 	        }
 	        
+	        for(int[] i : wires) {
+	            int x = i[0];
+	            int y= i[1];
 	            
-	        return dist[N-1][M-1];
+	            graph[x].add(y);
+	            graph[y].add(x);
+	        }
+	        dfs(1);
+	        return answer;
 	    }
 	    
-	    private static int calculateCost(int preDirection , int nowDirection) {
-	        if(preDirection == -1) return 100;
-	        return (preDirection - nowDirection % 2 == 0) ? 100 : 500;
-	    }
-	    private static class Node{
-	        int x , y , direction , cost;
+	    public static int dfs(int node) {
+	        visited[node] = true;
+	        int sum = 0;
 	        
-	        public Node(int x , int y , int direction , int cost) {
-	            this.x = x;
-	            this.y = y;
-	            this.direction = direction;
-	            this.cost = cost;
+	        for(int next : graph[node]) {
+	            if(!visited[next]) {
+	                int cnt = dfs(next);
+	                answer = Math.min(answer , Math.abs(N - 2 * cnt));
+	                sum += cnt;
+	            }    
 	        }
+	        
+	        return sum + 1;
 	    }
 	    
 }
