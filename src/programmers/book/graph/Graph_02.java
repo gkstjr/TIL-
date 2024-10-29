@@ -2,75 +2,58 @@ package programmers.book.graph;
 import java.util.*;
 
 public class Graph_02 {
-	   static int n , m;
-	    static char[][] graph;
-	    static int[] mx = {0,0,-1,1};
-	    static int[] my = {1,-1,0,0};
-
-	    public int solution(String[] maps) {
-	        n = maps.length;
-	        m = maps[0].length();
+	public static void main(String[] args) {
+		int[][] road = {{1,2,1},{2,3,3},{5,2,2},{1,4,2},{5,3,1},{5,4,2}};
+		solution(5 , road , 3);
+	}
+	   public static int solution(int N, int[][] road, int K) {
+	        int answer = 1;
+	        int[] dist = new int[N + 1];
+	        boolean[] visited = new boolean[N + 1];
+	        ArrayList<Node>[] graph = new ArrayList[N + 1];
 	        
-	        graph = new char[n][m];
-	        Node start = null , end = null , lever = null;
-	        
-	        for(int i = 0; i < maps.length; i++) {
-	            graph[i]  = maps[i].toCharArray();
+	        for(int i = 1; i < N + 1; i++) {
+	            graph[i] = new ArrayList<Node>();
 	        }
 	        
-	        for(int i = 0; i < n; i++) {
-	            for(int j = 0; j < m; j++) {
-	                char ch = graph[i][j];
-	                if(ch == 'S') start = new Node(i , j);
-	                else if(ch == 'L') lever = new Node(i , j);
-	                else if(ch == 'E') end = new Node(i , j);
-	            }
+	        for(int i = 0; i < road.length; i++) {
+	            int node1 = road[i][0];
+	            int node2 = road[i][1];
+	            int ds = road[i][2];
+	                
+	            graph[node1].add(new Node(node2 , ds));
+	            graph[node2].add(new Node(node1 , ds));
 	        }
 	        
-	        int startLever = bfs(start , lever);
-	        System.out.println("================");
-	        int leverEnd = bfs(lever , end);
+	        for(int i = 1; i < N + 1; i++) {
+	            Collections.sort(graph[i], (o1, o2) -> Integer.compare(o1.road, o2.road));
+	        }
 	        
-	        if(startLever == -1 || leverEnd == -1) return -1;
-	        
-	        return startLever + leverEnd;
-	    }
-	    
-	    public static int bfs(Node start , Node end) {
-	        boolean[][] visited = new boolean[n][m];
-	        int[][] answer = new int[n][m];
-	        visited[start.x][start.y] = true;
 	        ArrayDeque<Node> que = new ArrayDeque<Node>();
-	        que.offer(start);
+	        
+	        que.offer(new Node(1 , 0));
+	        visited[1] = true;
 	        
 	        while(!que.isEmpty()) {
 	            Node now = que.poll();
 	            
-	            for(int i = 0; i < 4; i++) {
-	                int nextX = now.x + mx[i]; 
-	                int nextY = now.y + my[i];
-	                
-	                if(nextX < 0 || nextY < 0 || nextX >= n || nextY >= m) continue;
-	                
-	                if(visited[nextX][nextY] || graph[nextX][nextY] == 'X') continue;
-	                
-	                visited[nextX][nextY] = true;
-	                answer[nextX][nextY] = answer[now.x][now.y] + 1;
-	                que.offer(new Node(nextX , nextY));
-	                if(nextX == end.x && nextY == end.y) {
-	                    return answer[end.x][end.y];
+	            for(Node next : graph[now.num]) {
+	                if(!visited[next.num] && (dist[now.num] + next.road) <= K) {
+	                    visited[next.num] = true;
+	                    answer++;
+	                    dist[next.num] = dist[now.num] + next.road;
 	                }
 	            }
 	        }
-	        return -1;
+	        return answer;
 	    }
 	    
 	    private static class Node {
-	        int x , y;
+	        int num , road;
 	        
-	        public Node(int x , int y) {
-	            this.x = x;
-	            this.y = y;
+	        public Node(int num , int road) {
+	            this.num = num;
+	            this.road = road;
 	        }
 	    }
 }
