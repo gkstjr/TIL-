@@ -77,8 +77,8 @@ public class back_basic2 {
 		}
 		return false;
 	}
-
-
+	
+	
 	public static Block findEmpty() {
 		for(int i = 0; i < 9; i++) {
 			for(int j = 0; j < 9; j++) {
@@ -89,6 +89,7 @@ public class back_basic2 {
 		}
 		return null;
 	}
+	
 	
 	private static class Block {
 		int row , col;
