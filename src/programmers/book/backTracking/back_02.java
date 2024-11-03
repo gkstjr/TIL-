@@ -9,7 +9,6 @@ public class back_02 {
 	        answer = 0;
 	        arr = new int[n];
 	        N = n;
-	        
 	        back(0);
 	        return answer;
 	    }
