@@ -10,6 +10,7 @@ public class Sort_06 {
         for(int i = 1 ;i < phone_book.length; i++) {
             if(phone_book[i].startsWith(phone_book[i - 1])) return false;
         }
+        
         return true;
     }
 }
