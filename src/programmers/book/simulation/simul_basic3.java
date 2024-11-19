@@ -23,6 +23,7 @@ public class simul_basic3 {
         answer[1] = zeroCnt;
         answer[0] = binaryCnt;
         
+        
         return answer;
     }
 }
