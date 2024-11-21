@@ -1,6 +1,7 @@
 package programmers.book.simulation;
 import java.util.*;
 
+
 public class Simull_basic {
 	public static void main(String[] args) {
 		
