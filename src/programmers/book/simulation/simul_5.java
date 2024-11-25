@@ -34,6 +34,7 @@ public class simul_5 {
 	                    break;
 	            }
 	            
+	            
 	            if(moveX + x < 0 || moveY + y < 0 || moveX + x >= vertical || moveY + y >= horizontal) continue;
 	         //   System.out.print(moveX + " " + moveY + " -> ");
 	        //    System.out.print(x + " " + y + " = ");
