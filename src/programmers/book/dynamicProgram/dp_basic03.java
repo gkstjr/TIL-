@@ -23,7 +23,6 @@ public class dp_basic03 {
 			answer = Math.max(answer, dp[2][i]);
 			answer = Math.max(answer, dp[3][i]);
 		}				
-		
 		System.out.println(answer);
 	}
 
