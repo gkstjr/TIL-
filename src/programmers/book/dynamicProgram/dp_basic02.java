@@ -1,6 +1,6 @@
 package programmers.book.dynamicProgram;
 import java.util.*;
-
+//dp 점화식 먼저 생성
 public class dp_basic02 {
 	public static void main(String[] args) {
 		int[] nums = {1,4,2,3,1,5,7,3};
