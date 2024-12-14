@@ -38,6 +38,7 @@ public class Greedy_basic02 {
 		}
 		
 		System.out.println(answer);
+	
 	}
 
 	public static int[] solution(int[] arr) {
