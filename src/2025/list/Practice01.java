@@ -12,7 +12,12 @@ import java.util.Scanner;
 import java.util.StringTokenizer;
 
 class Practice01 {
-
     public static void main(String[] args) {
-
+        solution({1,2,4,3});
     }
+
+    public static int[] solution(int[] arr) {
+        Arrays.sort(arr);
+        return arr;
+    }
+}
