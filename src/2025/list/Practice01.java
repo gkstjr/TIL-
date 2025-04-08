@@ -19,5 +19,6 @@ class Practice01 {
     public static int[] solution(int[] arr) {
         Arrays.sort(arr);
         return arr;
+
     }
 }
