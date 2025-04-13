@@ -1,12 +1,12 @@
-package jpabook.jpashop.algo;
+package main.java.jpabook.jpashop.algo;
 
 public class Sample {
     public static void main(String[] args) {
-
+    		
     }
 
-    public static String solution(String[] arr) {
-
+    public static String solution(int[] arr) {
+    		
         return null;
     }
 }
