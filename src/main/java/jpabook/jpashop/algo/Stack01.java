@@ -5,7 +5,7 @@ import java.util.*;
 public class Stack01 {
     public static void main(String[] args) {
     	String str = "()()";
-    	String str1 = "(())()";
+    	String str1 = "(()(";
     	
     	System.out.println(solution(str1));
     }
@@ -22,8 +22,7 @@ public class Stack01 {
     			stk.pop();
     		}
     	}
-    	if(stk.size() != 0) return false;
     	
-        return true;
+        return stk.isEmpty();
     }
 }
