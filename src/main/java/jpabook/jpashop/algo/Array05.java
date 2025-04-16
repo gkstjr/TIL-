@@ -18,6 +18,6 @@ public class Array05 {
                 answer[i][j] = sum;
             }
         }
-        return answer;
-    }
+        return answer; 
+ 	}
 }
